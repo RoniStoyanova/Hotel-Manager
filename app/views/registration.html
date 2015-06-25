@@ -2,41 +2,36 @@
             <article class="redLine">
                 <h1 class="formName"> CREATE NEW ACCOUNT </h1>
             </article>
-            <form action="">
+            <form id="registration-form" action="">
                 <!-- First name -->
                 <div class='container'>
-                    <input class="field" type="text" placeholder='First name' name="firstName"> 
-                    <p class='error'> ffdsfsd </p>
+                    <input class="field" type="text" placeholder='First name' name="firstname">
+                    <p class='error'></p>
                 </div>
                 <!-- Last name -->
                 <div class='container'>
-                    <input class="field" type="text" placeholder='Last name' name="familyName">
-                    <p class='error'> fsfsdf </p>
-                </div>
-                <!-- Date of birth -->
-                <div class='container'>
-                     <input class="field" type="date" name="bday">
-                     <p class='error'> fsfsdf </p>
+                    <input class="field" type="text" placeholder='Last name' name="lastname">
+                    <p class='error'></p>
                 </div>
                 <!-- User name -->
                 <div class='container'>
-                    <input class="field" type="text" placeholder='User name' name="userName">
-                    <p class='error'>fsfd </p>
+                    <input class="field" type="text" placeholder='User name' name="username">
+                    <p class='error'></p>
                 </div>
                 <!-- E-mail -->
                 <div class='container'>
                     <input class="field" type="email" placeholder='E-mail address' name="email">
-                    <p class='error'>fsfds </p>
+                    <p class='error'></p>
                 </div>
                 <!-- Password -->
                 <div class='container'>
                     <input class="field" type="password" placeholder='Password' name="password">
-                    <p class='error'>fsfs </p>
+                    <p class='error'></p>
                 </div>
                 <!-- Password again -->
                 <div class='container'>
-                    <input class="field" type="password" placeholder='Password again' name="familyName">
-                    <p class='error'>fsfsd </p>
+                    <input class="field" type="password" placeholder='Password again' name="secondpassword">
+                    <p class='error'></p>
                 </div>
                 <!-- Position -->
                 <div class="radio container">
@@ -46,10 +41,10 @@
                     <label>
                         <input type="radio" value="" name="position"> Receptionist
                     </label>
-                    <p class='error'>fsfsd </p>
+                    <p class='error'></p>
                 </div>
                 <div class='container'>
-                    <button class="field button">CREATE ACCOUNT</button>
+                    <button id="registrationButton" class="field button">CREATE ACCOUNT</button>
                 </div>
             </form>
         </div>

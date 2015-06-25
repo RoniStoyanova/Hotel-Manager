@@ -2,10 +2,10 @@
  * Created by vasil on 6/9/15.
  */
 var Validation = {
-    
+
     validateRequired : function (value) {
         value = value == undefined ? '' : value;
-        return String(value).replace(/^[a-zA-Z]+$/g, '').length > 4;
+        return String(value).replace(/^[a-zA-Z]+$/g, '').length > 0;
     },
 
     validateEmail : function (value) {
@@ -39,5 +39,9 @@ var Validation = {
         }
 
         return inList;
+    },
+
+    validateSecondPassword : function(value1, value2) {
+        return value1 == value2 ? true : false;
     }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Hotel menagment</title>
+    <title>Hotel manager</title>
     <link rel="stylesheet" href="app/assets/normalize.css">
     <link rel="stylesheet" href="app/assets/style.css">
 
@@ -13,7 +13,7 @@
     <script type="text/javascript" src="mvc/Validation.js"></script>
 
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
-    <script type="text/javascript" src="app/controllers/RegisterController.js"></script>
+    <script type="text/javascript" src="app/controllers/HomeController.js"></script>
     <script type="text/javascript" src="app/controllers/RoomController.js"></script>
     <script type="text/javascript" src="app/controllers/CreateRoomController.js"></script>
     <script type="text/javascript" src="app/controllers/CalendarController.js"></script>
@@ -23,6 +23,7 @@
     <script type="text/javascript" src="app/controllers/RegistrationController.js"></script>
 
     <script type="text/javascript" src="app/models/LoginForm.js"></script>
+    <script type="text/javascript" src="app/models/RegistrationForm.js"></script>
 
 
     <script type="text/javascript">
@@ -42,7 +43,7 @@
                     },
                     '/home': {
                         controller: 'home',
-                        template: 'filter.html'
+                        template: 'homepage.html'
                     },
                     '/rooms': {
                         controller: 'rooms',
@@ -71,7 +72,7 @@
                 },
                 controllers: {
                     'login' : LoginController,
-                    'home' : RegisterController,
+                    'home' : HomeController,
                     'rooms': RoomController,
                     'createRoom': CreateRoomController,
                     'calendar': CalendarController,
