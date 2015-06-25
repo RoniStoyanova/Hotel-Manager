@@ -1,0 +1,332 @@
+html {
+    height: 100%;
+}
+
+body{
+  background-image: url("newYork.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*.background {
+  position: fixed;
+  top: 0;
+  /*z-index: 0;
+
+}*/
+
+/*.behind {
+  width: 100%;
+  height: 170px;
+  z-index: 1;
+}*/
+
+
+/*HEADER*/
+
+.header {
+/*  position: fixed;
+  top:0px;
+  width: 100%;*/
+  height: 115px;
+  /*border: 1px solid black;*/
+  background: rgba(125,125,125,1);
+  color: #e8e9e9;
+  z-index: 1;
+}
+
+.header div {
+  text-align: center;
+}
+
+.header img {
+  margin: 10px;
+}
+
+.footer {
+  height: 60px;
+  background: #9B0808;
+  z-index: 1;
+}
+
+.headerLog {
+/*  position: fixed;
+  top:0px;
+  width: 100%;*/
+  height: 115px;
+  /*border: 1px solid black;*/
+  background: rgba(155,8,8,1);
+  color: #e8e9e9;
+  z-index: 1;
+}
+
+.headerLog div {
+  text-align: center;
+}
+
+.headerLog img {
+  margin: 10px;
+}
+
+
+
+/*NAVIGATOR*/
+.navigation {
+  background:  #9B0808;
+  text-align: center;
+}
+
+nav ul ul {
+  display: none;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+
+nav ul {
+  display: inline-block;
+  height: 60px;
+  background: #9B0808;
+  margin: 0;
+  padding: 0 20px;
+  list-style: none;
+  position: relative;
+  text-align: center;
+}
+
+nav ul:after {
+  content: ""; 
+  clear: both; 
+  display: block;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li:hover {
+    background: #6d0606;
+}
+  
+nav ul li a {
+  display: block; 
+  padding: 20px;
+  color: white; 
+  font-family: myFont;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li:hover a {
+  padding: 20px;
+  color: white;
+  font-family: myFont;
+  text-decoration: none;
+  font-size: 16px;
+  background: #6d0606;
+}
+
+nav ul ul {
+  background: #6d0606;  
+  padding: 0;
+  position: absolute; 
+  top: 100%;
+}
+
+nav ul ul li {
+  width: 190px;
+  float: none; 
+  border-top: 1px solid #494949;
+  border-bottom: 1px solid #494949;
+  position: relative;
+}
+
+nav ul ul li a {
+  padding: 20px;
+  color: white;
+} 
+
+nav ul ul li a:hover {
+  background: #494949;
+}
+
+.navRight {
+  float: right;
+}
+
+
+.wrapper {
+  clear: both;
+  display: block;
+  width: 900px;
+/*  height: 80%;*/
+  margin: 0 auto;
+  /*border: 1px solid red;*/
+}
+
+/*RESERVATION DIV*/
+.reservation {
+  clear: both;
+  padding: 15px;
+  width: 600px;
+  border: none;
+  margin: 20px auto;
+  border: 1px solid #494949;
+  background: rgba(150,150,150,0.9);
+  display: none;
+}
+
+/*REGISTRATION DIV*/
+.registration {
+  padding: 15px;
+  width: 600px;
+  border: none;
+  margin: 20px auto;
+  border: 1px solid #494949;
+  background: rgba(83,83,83,0.9);
+  display: none;
+}
+
+/*CREATE ROOM DIV*/
+.createRoom {
+  padding: 15px;
+  width: 600px;
+  border: none;
+  margin: 20px auto;
+  border: 1px solid #494949;
+  background: rgba(83,83,83,0.9);
+  display: none;
+}
+
+/*ADD EXTRAS TO ROOM*/
+.addExtras {
+  padding: 15px;
+  width: 600px;
+  border: none;
+  margin: 20px auto;
+  border: 1px solid #494949;
+  background: rgba(83,83,83,0.9);
+  display: none;
+}
+
+/*FILTER*/
+.filter {
+  display: inline-block;
+  padding: 15px;
+  width: 800px;
+  margin: 0 auto;
+  border: none;
+  margin: 20px auto;
+  border: 1px solid #494949;
+  background: rgba(83,83,83,0.9);
+/*  display: none;*/
+}
+
+.filter .container {
+  width: 210px;
+  float: left;
+  margin: 5px 0px 5px 40px;
+  font-family: myFont;
+}
+
+.filter p {
+  margin: 5px;
+}
+
+.fieldFilter {
+  width: 200px;
+  height: 35px;
+  background-color: #fff;
+  background-image: none;
+  border: 3px solid #494949;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  font-family: myFont;
+  text-align: center;
+}
+
+.filterButton {
+  width: 390px;
+  margin: 0 auto;
+  font-family: myFont;
+
+}
+
+
+/*FORM STYLE*/
+.redLine {
+  background: rgba(155,8,8,0.8);
+  height: 50px;
+  text-align: center;
+  border-bottom: 2px solid #1f1f1f;
+}
+
+.formName {
+  margin: 5px 0 ;
+  padding: 5px;
+  color: white;
+  font-family: myFont;
+}
+
+.error {
+  margin: 0.3em 0;
+  color: #ff4242;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: myFont;
+  text-align: left !important;
+  display: none;
+}
+
+.container {
+  width: 400px;
+  margin: 15px auto;
+  font-family: myFont;
+}
+
+.field {
+  width: 400px;
+  height: 35px;
+  background-color: #fff;
+  background-image: none;
+  border: 3px solid #494949;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  font-family: myFont;
+  text-align: center;
+}
+
+.radio {
+  width: 400px;
+  height: 35px;
+  font-family: myFont;
+  text-align: center;
+/*  color: white;*/
+}
+
+.checkBox {
+  font-family: myFont;
+  text-align: center;
+  /*color: white;*/
+}
+
+.button {
+  height: 40px !important;
+  background-color: #9B0808 !important;
+}
+
+h3 {
+  /*color: white;*/
+  font-family: myFont;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(fonts/Merriweather-Regular.ttf);
+}
+

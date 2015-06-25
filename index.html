@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel menagment</title>
+    <link rel="stylesheet" href="app/assets/normalize.css">
+    <link rel="stylesheet" href="app/assets/style.css">
+
+    <script type="text/javascript" src="mvc/Promise.js"></script>
+    <script type="text/javascript" src="mvc/Ajax.js"></script>
+    <script type="text/javascript" src="mvc/Model.js"></script>
+    <script type="text/javascript" src="mvc/View.js"></script>
+    <script type="text/javascript" src="mvc/Application.js"></script>
+
+    <script type="text/javascript" src="app/controllers/LoginController.js"></script>
+    <script type="text/javascript">
+
+        (function() {
+            var config = {
+                templatePath:'http://localhost:63342/mvc/app/views',
+                dataPath: 'http://localhost:63342/',
+                routes: {
+                    '': {
+                        controller: 'login',
+                        template: 'logIn.html'
+                    },
+                    '/login': {
+                        controller: 'login',
+                        template: 'logIn.html'
+                    },
+                    '/home': {
+                        controller: 'home',
+                        template: 'filter.html'
+                    },
+                    '/rooms': {
+                        controller: 'rooms',
+                        template: 'rooms.html'
+                    },
+                    '/createRoom': {
+                        controller: 'createRoom',
+                        template: 'reservation.html'
+                    },
+                    '/calendar': {
+                        controller: 'calendar',
+                        template: 'calendar.html'
+                    },
+                    '/guests': {
+                        controller: 'guests',
+                        template: 'guests.html'
+                    },
+                    '/accounts': {
+                        controller: 'accounts',
+                        template: 'accounts.html'
+                    },
+                    '/createAccount': {
+                        controller: 'createAccount',
+                        template: 'registration.html'
+                    }
+                },
+                controllers: {
+                    'login' : LoginController,
+//                    'home' : RegisterController,
+//                    'rooms': Rooms,
+//                    'createRoom': CreateRoomController,
+//                    'calendar': Calendar,
+//                    'guests': Guests ,
+//                    'accounts' : Accounts,
+//                    'createAccount': RegistrationController
+
+                }
+            }
+
+            window.onload = function() {
+                Application.createApp(config).start();
+            }
+
+        })();
+
+    </script>
+</head>
+<body>
+    <header class='header'>
+        <div class='logo'>
+            <img src="app/assets/logo1.png" width="350px" height="90px">
+        </div>
+    </header>
+
+    <nav>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                        <ul>
+                            <li><a href="#">CREATE ROOM</a></li>
+                            <li><a href="#">VIEW ROOMS</a></li>
+                        </ul>
+                </li> 
+                <li>
+                    <a href="#">CALENDAR</a>
+                        <ul>
+                            <li><a href="#">YEAR</a></li>
+                            <li><a href="#">MONTH</a></li>
+                            <li><a href="#">WEEK</a></li>
+                            <li><a href="#">DAY</a></li>
+                        </ul>
+                </li>
+                <li>
+                    <a href="#">GUESTS</a>
+                </li>
+                <li>
+                    <a href="#">ACCOUNTS</a>
+                        <ul>
+                            <li><a href="#">CREATE ACCOUNT</a></li>
+                            <li><a href="#">VIEW ACCOUNTS</a></li>
+                        </ul>
+                </li>
+               <!--  <li class="navRight">
+                    <a href="#">Log out</a>
+                </li>
+                <li class="navRight">
+                    <a href="#">Account info</a>
+                </li> -->
+            </ul>
+        </div>  
+    </nav>
+    <!-- <img class='background' src="assets/newYork.jpg"> -->
+    <!-- <div class="behind"></div> -->
+    <section class='wrapper' data-role="app-container">
+       
+
+    
+       
+
+       
+        
+        
+
+    </section>
+
+</body>
+</html>
