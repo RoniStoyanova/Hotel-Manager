@@ -1,3 +1,8 @@
-/**
- * Created by RonnieStoyanova on 6/25/2015.
- */
+function GuestsController() {
+
+}
+
+GuestsController.prototype.onCreateView = function (view) {
+
+}
+

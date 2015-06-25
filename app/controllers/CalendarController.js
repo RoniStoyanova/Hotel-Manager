@@ -1,3 +1,7 @@
-/**
- * Created by RonnieStoyanova on 6/25/2015.
- */
+function CalendarController() {
+
+}
+
+CalendarController.prototype.onCreateView = function (view) {
+
+}

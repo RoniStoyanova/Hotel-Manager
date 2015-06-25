@@ -35,7 +35,6 @@ body{
   /*border: 1px solid black;*/
   background: rgba(125,125,125,1);
   color: #e8e9e9;
-  z-index: 1;
 }
 
 .header div {
@@ -49,7 +48,6 @@ body{
 .footer {
   height: 60px;
   background: #9B0808;
-  z-index: 1;
 }
 
 .headerLog {
@@ -60,7 +58,6 @@ body{
   /*border: 1px solid black;*/
   background: rgba(155,8,8,1);
   color: #e8e9e9;
-  z-index: 1;
 }
 
 .headerLog div {
@@ -164,9 +161,7 @@ nav ul ul li a:hover {
   clear: both;
   display: block;
   width: 900px;
-/*  height: 80%;*/
   margin: 0 auto;
-  /*border: 1px solid red;*/
 }
 
 /*RESERVATION DIV*/
@@ -178,7 +173,7 @@ nav ul ul li a:hover {
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(150,150,150,0.9);
-  display: none;
+  /*display: none;*/
 }
 
 /*REGISTRATION DIV*/
@@ -189,7 +184,7 @@ nav ul ul li a:hover {
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(83,83,83,0.9);
-  display: none;
+  /*display: none;*/
 }
 
 /*CREATE ROOM DIV*/
@@ -200,7 +195,7 @@ nav ul ul li a:hover {
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(83,83,83,0.9);
-  display: none;
+  /*display: none;*/
 }
 
 /*ADD EXTRAS TO ROOM*/
@@ -211,7 +206,7 @@ nav ul ul li a:hover {
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(83,83,83,0.9);
-  display: none;
+  /*display: none;*/
 }
 
 /*FILTER*/
@@ -241,7 +236,7 @@ nav ul ul li a:hover {
 .fieldFilter {
   width: 200px;
   height: 35px;
-  background-color: #fff;
+  background: #fff;
   background-image: none;
   border: 3px solid #494949;
   border-radius: 4px;

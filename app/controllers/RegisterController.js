@@ -1,3 +1,7 @@
-function RegisterController () {
-	
+function RegisterController() {
+
+}
+
+RegisterController.prototype.onCreateView = function (view) {
+
 }

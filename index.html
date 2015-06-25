@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Hotel menagment</title>
     <link rel="stylesheet" href="app/assets/normalize.css">
@@ -13,12 +13,13 @@
 
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
     <script type="text/javascript" src="app/controllers/RegisterController.js"></script>
-    <script type="text/javascript" src="app/controllers/RoomsController.js"></script>
+    <script type="text/javascript" src="app/controllers/RoomController.js"></script>
     <script type="text/javascript" src="app/controllers/CreateRoomController.js"></script>
     <script type="text/javascript" src="app/controllers/CalendarController.js"></script>
     <script type="text/javascript" src="app/controllers/GuestsController.js"></script>
     <script type="text/javascript" src="app/controllers/AccountsController.js"></script>
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
+    <script type="text/javascript" src="app/controllers/RegistrationController.js"></script>
 
     <script type="text/javascript">
 
@@ -67,15 +68,14 @@
                 controllers: {
                     'login' : LoginController,
                     'home' : RegisterController,
-                    'rooms': RoomsController,
+                    'rooms': RoomController,
                     'createRoom': CreateRoomController,
                     'calendar': CalendarController,
                     'guests': GuestsController ,
                     'accounts' : AccountsController,
                     'createAccount': RegistrationController
-
                 }
-            }
+            };
 
             window.onload = function() {
                 Application.createApp(config).start();

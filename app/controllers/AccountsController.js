@@ -1,3 +1,7 @@
-/**
- * Created by RonnieStoyanova on 6/25/2015.
- */
+function AccountsController() {
+
+}
+
+AccountsController.prototype.onCreateView = function (view) {
+
+}
