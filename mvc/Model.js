@@ -1,18 +1,18 @@
 /**
- * 
+ *
  * Abstract class for all data entities in the applications
- * can be 
+ * can be
  * 1) applied to form
  * 2) loaded from form
  * 3) validated with custom validators
- * 3) can show it's errors to form fields 
- * Must be extended like this 
+ * 3) can show it's errors to form fields
+ * Must be extended like this
  * function ChildClass () {
  *  this.propertyOne = null;
  *  this.propertyTwo = null;
- *  Model.appli(this, arguments);
+ *  Model.apply(this, arguments);
  * }
- *   
+ *
  * @returns {Model}
  */
 function Model() {
@@ -20,13 +20,13 @@ function Model() {
     this.validators = [];
 }
 /**
- * initializes object with own props 
+ * initializes object with own props
  * @returns {undefined}
  */
 Model.prototype.initErrors = function() {
     this.errors = {};
     for (var prop in this) {
-        if (this.hasOwnProperty(prop)) {
+        if (this.hasOwnProperty(prop) && prop !== 'errors' && prop !== 'validators') {
             this.errors[prop] = [];
         }
     }
@@ -59,7 +59,7 @@ Model.prototype.addValidator = function (field, validator) {
 };
 
 /**
- * executes validator functions set with 
+ * executes validator functions set with
  * addValidator function
  * @returns {Boolean}
  */
@@ -83,7 +83,7 @@ Model.prototype.validate = function () {
 }
 /**
  * loads the allready existing own properties of the object
- * from form fields if there are fields in the form with the 
+ * from form fields if there are fields in the form with the
  * same name as the object property
  * @param {HmlForm} form
  * @returns {undefined}
@@ -113,9 +113,9 @@ Model.prototype.loadFromForm = function (form) {
 }
 /**
  * loads the allready existing own properties of the object
- * to form fields if there are fields in the form with the 
+ * to form fields if there are fields in the form with the
  * same name as the object property
- *  
+ *
  * @param {HtmlForm} form
  * @returns {undefined}
  */
@@ -139,30 +139,36 @@ Model.prototype.applyToForm = function (form) {
 }
 /**
  * adds error messages to error containers for each field which has errors
- * error container HTML must be placed right after the input and the must ve but in 
+ * error container HTML must be placed right after the input and the must ve but in
  * separate parent element like this
  * <container>
  *  <label></label>
  *  <input></inpunt>
  *  <error_container></error_container>
- * </container> 
+ * </container>
  * @param {HtmlForm} form
  * @returns {undefined}
  */
 Model.prototype.applyErrorsToForm = function (form) {
     for (var field in this) {
-        if (!this.hasOwnProperty(field)) {
+        if (!this.hasOwnProperty(field) || (field == 'errors' || field == 'validators')) {
             continue;
+        }
+        var fields = form.querySelectorAll('[name=' + field + ']');
+        if (fields.length > 1) {
+            var parent = fields[0].parentNode;
+            var errorContainer = parent.nextSibling;
+        } else {
+            var parent = fields[0].parentNode;
+            var errorContainer = parent.querySelector('.error');
+
         }
 
         if (this.errors[field] && this.errors[field].length) {
             var error = this.errors[field].join('<br>');
-            var fields = form.querySelectorAll('[name=' + field + ']');
-            if (fields.length > 1) {
-                var parent = fields[0].parentNode;
-                var errorContainer = parent.nextSibling;
-                errorContainer.innerHTML = this.errors[field].join('<br>');
-            }
+            errorContainer.innerHTML = error;
+        } else {
+            errorContainer.innerHTML = ''
         }
     }
 };

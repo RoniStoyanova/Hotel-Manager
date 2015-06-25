@@ -10,6 +10,7 @@
     <script type="text/javascript" src="mvc/Model.js"></script>
     <script type="text/javascript" src="mvc/View.js"></script>
     <script type="text/javascript" src="mvc/Application.js"></script>
+    <script type="text/javascript" src="mvc/Validation.js"></script>
 
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
     <script type="text/javascript" src="app/controllers/RegisterController.js"></script>
@@ -21,12 +22,15 @@
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
     <script type="text/javascript" src="app/controllers/RegistrationController.js"></script>
 
+    <script type="text/javascript" src="app/models/LoginForm.js"></script>
+
+
     <script type="text/javascript">
 
         (function() {
             var config = {
                 templatePath:'http://localhost:63342/mvc/app/views',
-                dataPath: 'http://localhost:63342/',
+                dataPath: 'http://192.168.7.186:8080/FinalProject',
                 routes: {
                     '': {
                         controller: 'login',
@@ -92,6 +96,7 @@
         </div>
     </header>
 
+<div class="line">
     <nav>
         <div class="navigation">
             <ul>
@@ -133,6 +138,7 @@
             </ul>
         </div>  
     </nav>
+</div>
     <!-- <img class='background' src="assets/newYork.jpg"> -->
     <!-- <div class="behind"></div> -->
     <section class='wrapper' data-role="app-container">

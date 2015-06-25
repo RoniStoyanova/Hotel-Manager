@@ -3,6 +3,10 @@
  * @type Ajax
  */
 var Ajax = {
+
+    sendJSON: true,
+
+
     /**
      * Performs get request
      * @param url - the url against which you perform the request
@@ -10,6 +14,7 @@ var Ajax = {
      * @param async - is the request synchronous or asynchronous
      * @returns Promise if async is true | XmlHTTPRequest if async is false
      */
+
     getRequest: function(url, params, async) {
         return this.request('GET', url, params, async);
     },
@@ -36,11 +41,13 @@ var Ajax = {
      */
     request: function(method, url, params, async) {
         var xhr = this.getXhr();
-        if (params) {
+        if (params && method === 'GET') {
             params = typeof params == 'object' ? this.objectToParams(params) : params;
             if (method.toLowerCase() == 'get') {
                 url += url.indexOf('?') == -1 ? ('?' + params) : url + params;
             }
+        } else if(method == 'POST' && this.sendJSON) {
+            params = JSON.stringify(params);
         }
         async = async === undefined ? true : async;
         xhr.open(method, url, async ? true: false);

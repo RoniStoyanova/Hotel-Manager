@@ -71,6 +71,16 @@ body{
 
 
 /*NAVIGATOR*/
+
+.line {
+    background:  #9B0808;
+    height: 60px;
+}
+
+nav {
+    display: none;
+}
+
 .navigation {
   background:  #9B0808;
   text-align: center;
@@ -275,7 +285,7 @@ nav ul ul li a:hover {
   font-weight: bold;
   font-family: myFont;
   text-align: left !important;
-  display: none;
+  /*display: none;*/
 }
 
 .container {
