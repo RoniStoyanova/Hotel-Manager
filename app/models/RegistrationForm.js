@@ -41,6 +41,11 @@ function RegistrationForm() {
             _this.addError(fieldName, 'User name must be at least 6 characters!')
         }
     });
+    this.addValidator('password', function(fieldName, fieldValue) {
+        if (!Validation.validateRequired(fieldValue)) {
+            _this.addError(fieldName, 'First name must be filled out!')
+        }
+    });
     //this.addValidator('secondpassword', function(fieldName, fieldValue) {
     //    if (!Validation.validateSecondPassword(fieldValue, )) {
     //        _this.addError(fieldName, 'User name must be at least 6 characters!')

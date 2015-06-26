@@ -2,6 +2,8 @@ function LoginController() {
 
 }
 
+
+
 LoginController.prototype.onCreateView = function (view) {
 
     var form = new LoginForm();
@@ -21,20 +23,22 @@ LoginController.prototype.onCreateView = function (view) {
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);
+
                 window.location.hash = '#/home';
-                document.querySelector("nav").style.display = "block";
-            })
+                document.querySelector(".navigationBar").style.display = "block";
+                document.querySelector(".information").style.display = "block";
+
+                var response = JSON.parse(xhr.responseText);
+
+            });
             promise.setOnFail(function(xhr) {
                 console.log(xhr.responseText);
+
                 var response = JSON.parse(xhr.responseText);
                 form.addError("username",response.massage);
                 form.applyErrorsToForm(domForm);
             })
         }
 
-
-
     }, false);
-}
-
-//poluchavam info za akaunta
+};

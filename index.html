@@ -19,14 +19,13 @@
     <script type="text/javascript" src="app/controllers/CalendarController.js"></script>
     <script type="text/javascript" src="app/controllers/GuestsController.js"></script>
     <script type="text/javascript" src="app/controllers/AccountsController.js"></script>
-    <script type="text/javascript" src="app/controllers/LoginController.js"></script>
+    <script type="text/javascript" src="app/controllers/ReservationController.js"></script>
     <script type="text/javascript" src="app/controllers/RegistrationController.js"></script>
+    <script type="text/javascript" src="app/controllers/InfoAccountController.js"></script>
 
     <script type="text/javascript" src="app/models/LoginForm.js"></script>
     <script type="text/javascript" src="app/models/RegistrationForm.js"></script>
     <script type="text/javascript" src="app/models/FilterForm.js"></script>
-
-
 
     <script type="text/javascript">
 
@@ -47,12 +46,20 @@
                         controller: 'home',
                         template: 'homepage.html'
                     },
+                    '/accountInfo': {
+                        controller: 'accountInfo',
+                        template: 'accountInfo.html'
+                    },
                     '/rooms': {
                         controller: 'rooms',
                         template: 'rooms.html'
                     },
                     '/createRoom': {
                         controller: 'createRoom',
+                        template: 'createRoom.html'
+                    },
+                    '/reservation': {
+                        controller: 'reservation',
                         template: 'reservation.html'
                     },
                     '/calendar': {
@@ -75,12 +82,14 @@
                 controllers: {
                     'login' : LoginController,
                     'home' : HomeController,
+                    'accountInfo' : InfoAccountController,
                     'rooms': RoomController,
                     'createRoom': CreateRoomController,
                     'calendar': CalendarController,
                     'guests': GuestsController ,
                     'accounts' : AccountsController,
-                    'createAccount': RegistrationController
+                    'createAccount': RegistrationController,
+                    'reservation' : ReservationController
                 }
             };
 
@@ -96,44 +105,36 @@
 <body>
     <header class='header'>
         <div class='logo'>
-            <img src="app/assets/logo1.png" width="350px" height="90px">
-            <a id='logOut' href="#">Log out</a>
-            <a id='accountInfo' href="#">Account info</a>
-
+            <div class="information">
+                <a id='accountInfo' href="#/accountInfo">Account info</a>
+                <a id='logOut' href="#">Log out</a>
+            </div>
         </div>
     </header>
 
 <div class="line">
-    <nav>
+    <nav class="navigationBar">
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">HOME</a>
+                    <a href="#/home">HOME</a>
                 </li>
                 <li>
-                    <a href="#">ROOMS</a>
+                    <a href="#/rooms">ROOMS</a>
                         <ul>
-                            <li><a href="#">CREATE ROOM</a></li>
-                            <li><a href="#">VIEW ROOMS</a></li>
+                            <li><a href="#/createRoom">CREATE ROOM</a></li>
                         </ul>
                 </li> 
                 <li>
-                    <a href="#">CALENDAR</a>
-                        <ul>
-                            <li><a href="#">YEAR</a></li>
-                            <li><a href="#">MONTH</a></li>
-                            <li><a href="#">WEEK</a></li>
-                            <li><a href="#">DAY</a></li>
-                        </ul>
+                    <a href="#/calendar">CALENDAR</a>
                 </li>
                 <li>
-                    <a href="#">GUESTS</a>
+                    <a href="#/guests">GUESTS</a>
                 </li>
                 <li>
-                    <a href="#">ACCOUNTS</a>
+                    <a href="#/accounts">ACCOUNTS</a>
                         <ul>
-                            <li><a href="#">CREATE ACCOUNT</a></li>
-                            <li><a href="#">VIEW ACCOUNTS</a></li>
+                            <li><a href="#/createAccount">CREATE ACCOUNT</a></li>
                         </ul>
                 </li>
                <!--  <li class="navRight">
