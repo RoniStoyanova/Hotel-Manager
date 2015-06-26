@@ -46,11 +46,7 @@ function RegistrationForm() {
     //        _this.addError(fieldName, 'User name must be at least 6 characters!')
     //    }
     //});
-    this.addValidator('position', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldValue)) {
-            _this.addError(fieldName, 'Postion must be checked out!')
-        }
-    });
+
 }
 
 RegistrationForm.prototype = Object.create(Model.prototype);

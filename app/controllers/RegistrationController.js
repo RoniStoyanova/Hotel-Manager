@@ -29,9 +29,13 @@ RegistrationController.prototype.onCreateView = function (view) {
             })
             promise.setOnFail(function(xhr) {
                 console.log(xhr.responseText);
-                //var response = JSON.parse(xhr.responseText);
-                //form.addError("username",response.massage);
-                //form.applyErrorsToForm(domForm);
+                var response = JSON.parse(xhr.responseText);
+                if (response.massage == "taken") {
+                    form.addError("username",'User name is taken!');
+                    form.applyErrorsToForm(domForm);
+                }
+
+                form.applyErrorsToForm(domForm);
                 //form.addError("email",response.massage);
                 //form.applyErrorsToForm(domForm);
             })
