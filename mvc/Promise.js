@@ -21,6 +21,11 @@ function Promise(successFn, failFn) {
 Promise.prototype.setOnSuccess = function (fn) {
     this.onSuccess = fn;
 };
+//
+//Promise.prototype.addOnSuccess = function (fn) {
+//    this.onSuccess.push(fn);
+//    return this;
+//}
 /**
  * 
  * @param {type} fn
@@ -29,6 +34,11 @@ Promise.prototype.setOnSuccess = function (fn) {
 Promise.prototype.setOnFail = function (fn) {
     this.onFail = fn;
 };
+
+//Promise.prototype.addOnFail= function (fn) {
+//    this.onFail.push(fn);
+//    return this;
+//}
 
 /**
  * resolves the promise and onSuccess function is called

@@ -6,6 +6,7 @@ var Ajax = {
 
     sendJSON: true,
 
+    mockData : false,
 
     /**
      * Performs get request
@@ -41,6 +42,9 @@ var Ajax = {
      */
     request: function(method, url, params, async) {
         var xhr = this.getXhr();
+        if (this.mockData) {
+            url += '.json'
+        }
         if (params && method === 'GET') {
             params = typeof params == 'object' ? this.objectToParams(params) : params;
             if (method.toLowerCase() == 'get') {

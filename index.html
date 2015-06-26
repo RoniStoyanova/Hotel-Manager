@@ -33,7 +33,7 @@
         (function() {
             var config = {
                 templatePath:'http://localhost:63342/mvc/app/views',
-                dataPath: 'http://192.168.7.186:8080/FinalProject',
+                dataPath: 'app/mockup',
                 routes: {
                     '': {
                         controller: 'login',
@@ -85,6 +85,7 @@
             };
 
             window.onload = function() {
+                Ajax.mockData = true;
                 Application.createApp(config).start();
             }
 
@@ -96,6 +97,9 @@
     <header class='header'>
         <div class='logo'>
             <img src="app/assets/logo1.png" width="350px" height="90px">
+            <a id='logOut' href="#">Log out</a>
+            <a id='accountInfo' href="#">Account info</a>
+
         </div>
     </header>
 

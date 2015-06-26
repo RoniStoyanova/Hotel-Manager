@@ -16,8 +16,10 @@ View.prototype.getView = function(template, reload) {
     if (!reload && url in this.cache) {
         return this.cache[url];
     }
-
+    var mock = Ajax.mockData;
+    Ajax.mockData = false;
     var request = Ajax.getRequest(url, null, false);
+    Ajax.mockData = mock;
     if (request.status === 200) {
         this.cache[url] = request.responseText;
     } else {
