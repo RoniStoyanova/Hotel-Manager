@@ -2,9 +2,9 @@ function InfoAccountController() {
 
 }
 
-
-
 InfoAccountController.prototype.onCreateView = function (view) {
+
+    ShowBars();
 
     function makeFormDisable() {
         view.querySelector("#infoFirstName").disabled = true;
@@ -77,20 +77,27 @@ InfoAccountController.prototype.onCreateView = function (view) {
     }, false);
 
     view.querySelector("#saveChanges").addEventListener('click', function() {
-        //form.loadFromForm(view.querySelector("#accountinfo-form"));
-        //if(!form.validate()) {
-        //    form.applyErrorsToForm(domForm);
-        //} else {
+        form.loadFromForm(view.querySelector("#accountinfo-form"));
+        if(!form.validate()) {
+            form.applyErrorsToForm(domForm);
+        } else {
             url = Application.getConfigValue("dataPath") + '/LoginServlet';
 
+            var position;
+            if (view.querySelector("#infoRadio1").checked) {
+                position = "admin";
+            } else {
+                position = "user"
+            }
             var params = {
                 firstName: form.firstname,
                 lastName: form.lastname,
                 userName: form.username,
                 eMail: form.email,
                 password: form.password,
-                userRole: form.position
+                userRole: position
             };
+            //console.log(params);
             var promise = Ajax.postRequest(url, params, true);
 
             promise.setOnSuccess(function (xhr) {
@@ -104,7 +111,7 @@ InfoAccountController.prototype.onCreateView = function (view) {
             promise.setOnFail(function (xhr) {
                 console.log(xhr.responseText);
             });
-
+        }
     }, false);
 };
 

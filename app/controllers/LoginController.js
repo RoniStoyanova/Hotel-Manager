@@ -2,9 +2,10 @@ function LoginController() {
 
 }
 
-
-
 LoginController.prototype.onCreateView = function (view) {
+
+    ShowBars();
+
 
     var form = new LoginForm();
     var domForm = view.querySelector("#login-form");
@@ -19,14 +20,16 @@ LoginController.prototype.onCreateView = function (view) {
             form.applyErrorsToForm(domForm);
         } else {
             var url = Application.getConfigValue("dataPath") + '/LoginServlet';
-            var params = { user: form.username, password: form.password };
+            var params = {
+                user: form.username,
+                password: form.password
+            };
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);
 
                 window.location.hash = '#/home';
-                document.querySelector(".navigationBar").style.display = "block";
-                document.querySelector(".information").style.display = "block";
+
 
                 var response = JSON.parse(xhr.responseText);
 

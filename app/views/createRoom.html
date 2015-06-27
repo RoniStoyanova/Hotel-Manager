@@ -1,67 +1,68 @@
  <div class="createRoom">
-            <form>
+            <form id="createroom-form">
                 <article class="redLine">
                     <h1 class="formName"> CREATE ROOM </h1>
                 </article>
 
-                <!-- <section class="registration sectionWidth500"> -->
+                <!-- Room number -->
                 <div class="container">
                     <input class="field" type="number" placeholder='Room number' name="roomNumber">
+                    <p class='error'></p>
                 </div>
+                <!--Room number of beds-->
                 <div class="container">
                     <input class="field" type="number" placeholder='Number of beds' name="beds">
+                    <p class='error'></p>
                 </div>
+                <!--Room price per night-->
                 <div class="container">
                     <input class="field" type="number" placeholder='Room price per night' name="price">
+                    <p class='error'></p>
                 </div>
+                <!--Room description-->
                 <div class='container'>
-                    <textarea name='description' placeholder="Room description" rows="5" cols="47"></textarea>
-                </div>
-                <div class="container">
-                    <button class="field button">Add extras >></button>
-                </div>
-                <div class="container">
-                    <button class="field button">CREATE ROOM</button>
+                    <textarea class="field" placeholder="Room description" rows="5" cols="47" name='description' ></textarea>
                 </div>
 
-                <dix class="addExtras">
+                <!--Extras-->
+                <div class="addExtras">
+                    <p>EXTRAS:</p>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="wifi">
                         <label>Wi-Fi</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="tv">
                         <label>TV</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="airConditioning">
                         <label>Air conditioning</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="refrigerator">
                         <label>Refrigerator</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="hairDryer">
                         <label>Hair dryer</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="bathroom">
                         <label>Bathroom</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="kitchen">
                         <label>Kitchen</label>
                     </div>
                     <div class="container">
-                        <input class="checkBox" type="checkbox">
+                        <input class="checkBox" type="checkbox" name="livingRoom">
                         <label>Living room</label>
                     </div>
-
+                </div>
                     <div class="container">
-                        <button class="field button">Done</button>
+                        <button id="createroomButton" class="field button">CREATE ROOM</button>
                     </div>
 
-                </div>
             </form>
         </div>

@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    font-family: myFont;
 }
 
 body{
@@ -227,13 +228,22 @@ nav ul ul li a:hover {
 
 /*ADD EXTRAS TO ROOM*/
 .addExtras {
-  padding: 15px;
-  width: 600px;
-  border: none;
+
+  width: 180px;
   margin: 20px auto;
-  border: 1px solid #494949;
-  background: rgba(83,83,83,0.9);
-  /*display: none;*/
+
+}
+
+.addExtras p{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 2px solid #1f1f1f;
+    text-align: center;
+}
+
+.addExtras .container {
+    width: 180px !important;
 }
 
 /*FILTER*/

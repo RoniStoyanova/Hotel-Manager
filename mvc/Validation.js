@@ -5,13 +5,12 @@ var Validation = {
 
     validateRequired : function (value) {
         value = value == undefined ? '' : value;
-        return String(value).replace(/^[a-zA-Z]+$/g, '').length > 0;
+        return String(value).replace(/^[\s\t\r\n]*\S+/ig, '').length > 0;
     },
 
     validateEmail : function (value) {
         return String(value).match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/g) ? true : false;
     },
-
 
     validateLength : function (value, min, max) {
         value = value == undefined ? '' : value;

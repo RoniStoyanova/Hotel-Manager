@@ -3,12 +3,14 @@ function RegistrationController() {
 }
 
 RegistrationController.prototype.onCreateView = function (view) {
-    //var form = new RegistrationForm();
-    //
-    //var domForm = document.getElementById("registration-form");
-    //domForm.addEventListener("submit", function (e) {
-    //    e.preventDefault();
-    //});
+
+    ShowBars();
+
+    var form = new RegistrationForm();
+    var domForm = view.querySelector("#registration-form");
+    domForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+    });
     // to do
     //view.querySelector('[name=username]').addEventListener("input" , function() {
     //
@@ -22,29 +24,36 @@ RegistrationController.prototype.onCreateView = function (view) {
     //    firstPromise.setOnSuccess(function ())
     //
     //})
-    //view.querySelector("#registrationButton").addEventListener("click", function () {
-    //    form.loadFromForm(domForm);
-    //    var isValid = form.validate();
-    //    form.applyErrorsToForm(domForm);
-    //
-    //
-    //    var url = Application.getConfigValue("dataPath") + '/RegistrationServlet';
-    //    var params = {
-    //        firstName: form.firstname,
-    //        lastName: form.lastname,
-    //        userName: form.username,
-    //        eMail: form.email,
-    //        password: form.password,
-    //        userRole: form.position
-    //    };
-    //    var promise = Ajax.postRequest(url, params, true);
-    //
-    //    promise.setOnSuccess(function (xhr) {
-    //        console.log(xhr.responseText);
-    //    });
-    //    promise.setOnFail(function (xhr) {
-    //        console.log(xhr.responseText);
-    //    });
-    //
-    //}, false);
+    view.querySelector("#registrationButton").addEventListener('click', function() {
+        form.loadFromForm(domForm);
+        if(!form.validate()) {
+            form.applyErrorsToForm(domForm);
+        } else {
+            url = Application.getConfigValue("dataPath") + '/LoginServlet';
+
+            if (view.querySelector("#infoRadio1").checked) {
+                position = "admin";
+            } else {
+                position = "user"
+            }
+            var params = {
+                firstName: form.firstname,
+                lastName: form.lastname,
+                userName: form.username,
+                eMail: form.email,
+                password: form.password,
+                userRole: position
+            };
+
+            var promise = Ajax.postRequest(url, params, true);
+
+            promise.setOnSuccess(function (xhr) {
+                console.log(xhr.responseText);
+                window.location.hash = '#/accounts';
+            });
+            promise.setOnFail(function (xhr) {
+                console.log(xhr.responseText);
+            });
+        }
+    }, false);
 }

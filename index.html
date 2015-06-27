@@ -11,6 +11,7 @@
     <script type="text/javascript" src="mvc/View.js"></script>
     <script type="text/javascript" src="mvc/Application.js"></script>
     <script type="text/javascript" src="mvc/Validation.js"></script>
+    <script type="text/javascript" src="mvc/ShowBars.js"></script>
 
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
     <script type="text/javascript" src="app/controllers/HomeController.js"></script>
@@ -26,6 +27,8 @@
     <script type="text/javascript" src="app/models/LoginForm.js"></script>
     <script type="text/javascript" src="app/models/RegistrationForm.js"></script>
     <script type="text/javascript" src="app/models/FilterForm.js"></script>
+    <script type="text/javascript" src="app/models/ReservationForm.js"></script>
+    <script type="text/javascript" src="app/models/RoomForm.js"></script>
 
     <script type="text/javascript">
 
@@ -107,7 +110,7 @@
         <div class='logo'>
             <div class="information">
                 <a id='accountInfo' href="#/accountInfo">Account info</a>
-                <a id='logOut' href="#">Log out</a>
+                <a id='logOut' href="">Log out</a>
             </div>
         </div>
     </header>
@@ -120,7 +123,7 @@
                     <a href="#/home">HOME</a>
                 </li>
                 <li>
-                    <a href="#/rooms">ROOMS</a>
+                    <a id="rooms" href="#/rooms">ROOMS</a>
                         <ul>
                             <li><a href="#/createRoom">CREATE ROOM</a></li>
                         </ul>

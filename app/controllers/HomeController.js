@@ -4,6 +4,8 @@ function HomeController() {
 
 HomeController.prototype.onCreateView = function (view) {
 
+    ShowBars();
+
     var form = new FilterForm();
     var domForm = view.querySelector("#filter-form");
     domForm.addEventListener("submit",function(e) {
