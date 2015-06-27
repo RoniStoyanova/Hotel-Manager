@@ -13,6 +13,8 @@ function RoomForm () {
     this.kitchen       = '';
     this.livingRoom    = '';
 
+    this.roomStatus = '';
+
     Model.call(this);
 
     var _this = this;

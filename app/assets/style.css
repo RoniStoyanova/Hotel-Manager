@@ -56,11 +56,7 @@ body{
 }
 
 .headerLog {
-/*  position: fixed;
-  top:0px;
-  width: 100%;*/
   height: 115px;
-  /*border: 1px solid black;*/
   background: rgba(155,8,8,1);
   color: #e8e9e9;
 }
@@ -197,7 +193,6 @@ nav ul ul li a:hover {
   clear: both;
   padding: 15px;
   width: 600px;
-  border: none;
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(150,150,150,0.9);
@@ -208,7 +203,6 @@ nav ul ul li a:hover {
 .registration {
   padding: 15px;
   width: 600px;
-  border: none;
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(83,83,83,0.9);
@@ -219,7 +213,6 @@ nav ul ul li a:hover {
 .createRoom {
   padding: 15px;
   width: 600px;
-  border: none;
   margin: 20px auto;
   border: 1px solid #494949;
   background: rgba(83,83,83,0.9);
@@ -252,7 +245,6 @@ nav ul ul li a:hover {
   padding: 15px;
   width: 800px;
   margin: 20px 50px;
-  border: none;
   border: 1px solid #494949;
   background: rgba(83,83,83,0.9);
 /*  display: none;*/
@@ -365,6 +357,17 @@ h3 {
 .accountFieldInfo {
     margin: 0;
 }
+
+.rooms {
+    padding: 15px;
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid #494949;
+    background: rgba(83,83,83,0.9);
+}
+
+
+
 
 @font-face {
     font-family: myFont;

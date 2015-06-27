@@ -1,0 +1,36 @@
+
+[
+  {
+    "roomID" : 1,
+    "roomNumber" : 1,
+    "beds" : 3,
+    "price" : 20,
+    "description" : "Something",
+    "wifi" : "true",
+    "tv" : "true",
+    "airConditioning" : "false",
+    "refrigerator" : "true",
+    "hairDryer" : "true",
+    "bathroom" : "false",
+    "kitchen" : "false",
+    "livingRoom" : "true",
+    "statusRoom" : 1
+  },
+
+  {
+    "roomID" : 1,
+    "roomNumber" : 1,
+    "beds" : 2,
+    "price" : 20,
+    "description" : "Something",
+    "wifi" : "true",
+    "tv" : "true",
+    "airConditioning" : "false",
+    "refrigerator" : "true",
+    "hairDryer" : "true",
+    "bathroom" : "false",
+    "kitchen" : "false",
+    "livingRoom" : "true",
+    "statusRoom" : 2
+  }
+]

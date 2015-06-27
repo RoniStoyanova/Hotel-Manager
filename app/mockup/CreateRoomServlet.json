@@ -5,12 +5,12 @@
   "beds" : 2,
   "price" : 20,
   "description" : "Something",
-  "tv" : "false",
-  "wc" : "false",
-  "bath" : "false",
+  "wifi" : "true",
+  "tv" : "true",
+  "airConditioning" : "false",
   "refrigerator" : "true",
-  "sight" : "false",
-  "lux" : "true",
+  "hairDryer" : "true",
+  "bathroom" : "false",
   "kitchen" : "false",
-  "wifi" : "true"
+  "livingRoom" : "true"
 }
