@@ -51,7 +51,7 @@ CreateRoomController.prototype.onCreateView = function (view) {
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);
-                //window.location.hash = '#/rooms';
+                window.location.hash = '#/rooms';
             });
             promise.setOnFail(function(xhr) {
                 console.log(xhr.responseText);

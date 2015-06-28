@@ -29,7 +29,7 @@ RegistrationController.prototype.onCreateView = function (view) {
         if(!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
-            url = Application.getConfigValue("dataPath") + '/LoginServlet';
+            url = Application.getConfigValue("dataPath") + '/RegistrationServlet';
 
             if (view.querySelector("#infoRadio1").checked) {
                 position = "admin";

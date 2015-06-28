@@ -48,14 +48,14 @@ InfoAccountController.prototype.onCreateView = function (view) {
         //    "eMail":"roni@gmail.com",
         //    "userRole":"admin"
         console.log(response.firstName);
-        view.querySelector("#infoFirstName").value = response.firstName;
-        view.querySelector("#infoLastName").value = response.lastName;
-        view.querySelector("#infoUserName").value = response.userName;
-        view.querySelector("#infoEmail").value = response.eMail;
-        view.querySelector("#infoPassword").value = response.password;
-        view.querySelector("#infoConfirmPassword").value = response.password;
+        view.querySelector("#infoFirstName").value = response[0].firstName;
+        view.querySelector("#infoLastName").value = response[0].lastName;
+        view.querySelector("#infoUserName").value = response[0].userName;
+        view.querySelector("#infoEmail").value = response[0].eMail;
+        view.querySelector("#infoPassword").value = response[0].password;
+        view.querySelector("#infoConfirmPassword").value = response[0].password;
 
-        if (response.userRole == 'admin') {
+        if (response[0].userRole == 'admin') {
             view.querySelector("#infoRadio1").checked = true;
         } else {
             view.querySelector("#infoRadio1").checked = false;
