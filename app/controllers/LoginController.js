@@ -27,11 +27,12 @@ LoginController.prototype.onCreateView = function (view) {
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);
-
-                window.location.hash = '#/home';
-
-
                 var response = JSON.parse(xhr.responseText);
+    localStorage.setItem('userId',response.id);
+                var userId=localStorage.getItem('userId')
+               window.location.hash = '#/home';
+                alert(userId);
+
 
             });
             promise.setOnFail(function(xhr) {

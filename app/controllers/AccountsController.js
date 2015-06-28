@@ -5,7 +5,7 @@ function AccountsController() {
 AccountsController.prototype.onCreateView = function (view) {
     ShowBars();
 
-    var url = Application.getConfigValue("dataPath") + '/LoginServlet';
+    var url = Application.getConfigValue("dataPath") + '/';
     var params = {
 
     };

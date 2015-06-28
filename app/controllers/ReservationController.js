@@ -14,7 +14,7 @@ ReservationController.prototype.onCreateView = function (view) {
 
     view.querySelector("#reservationButton").addEventListener("click", function(){
 
-        //form.loadFromForm(domForm);
+        form.loadFromForm(domForm);
         //if (!form.validate()) {
         //    form.applyErrorsToForm(domForm);
         //} else {
@@ -39,8 +39,7 @@ ReservationController.prototype.onCreateView = function (view) {
             }
 
             var params = {
-
-                roomID : form.roomNumber ,
+                roomId : form.roomNumber ,
                 reservationStatus : status,
                 dateFrom : form.dateFrom,
                 dateTo : form.dateTo,
@@ -48,9 +47,11 @@ ReservationController.prototype.onCreateView = function (view) {
                 lastName : form.lastName,
                 passport : form.passport,
                 egn : form.egn,
-                eMail : form.email,
-                phone : form.phone
+                eMail : form.email
             };
+
+            console.log(params);
+
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);

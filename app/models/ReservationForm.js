@@ -2,13 +2,13 @@ function ReservationForm(){
     this.roomNumber = '';
     this.dateFrom  = '';
     this.dateTo = '';
-    this.status         = '';
+    this.reservationStatus = '';
     this.firstName      = '';
     this.lastName       = '';
     this.egn            = '';
     this.passport       = '';
     this.email          = '';
-    this.phone          = '';
+    //this.phone          = '';
 
     Model.call(this);
 
@@ -49,11 +49,11 @@ function ReservationForm(){
         }
     });
 
-    this.addValidator('phone', function(fieldName, fieldValue) {
-        if (!Validation.validateNumber(fieldName)) {
-            _this.addError(fieldName, 'Use only numbers!')
-        }
-    });
+    //this.addValidator('phone', function(fieldName, fieldValue) {
+    //    if (!Validation.validateNumber(fieldName)) {
+    //        _this.addError(fieldName, 'Use only numbers!')
+    //    }
+    //});
 
     //this.addValidator('Check_in_Date', function(Check_in_Date){             // ???????????????
     //    var firstDate = _this.Check_in_Date;

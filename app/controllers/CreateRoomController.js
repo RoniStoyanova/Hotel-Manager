@@ -18,7 +18,7 @@ CreateRoomController.prototype.onCreateView = function (view) {
         if (!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
-            var url = Application.getConfigValue("dataPath") + '/CreateRoomServlet';
+            var url = Application.getConfigValue("dataPath") + '/RoomGenerationServlet';
 
             var wifi = view.querySelector('#wifi').checked;
             var tv = view.querySelector('#tv').checked;
@@ -28,9 +28,12 @@ CreateRoomController.prototype.onCreateView = function (view) {
             var bathroom = view.querySelector('#bathroom').checked;
             var kitchen = view.querySelector('#kitchen').checked;
             var livingRoom = view.querySelector('#livingRoom').checked;
+            var wc = view.querySelector('#wc').checked;
+            var sight = view.querySelector('#sight').checked;
+            var lux = view.querySelector('#lux').checked;
 
             var params = {
-                roomNumber : form.roomNumber,
+                id : form.roomNumber,
                 beds : form.beds,
                 price : form.price,
 	            description : form.description,
@@ -38,13 +41,16 @@ CreateRoomController.prototype.onCreateView = function (view) {
                 wifi : wifi,
                 tv : tv,
 	            airConditioning : airConditioning,
-                hairdryer: hairDryer,
+                hairDryer: hairDryer,
                 refrigerator : refrigerator,
                 bath : bathroom,
                 kitchen : kitchen,
 	            livingRoom : livingRoom,
+                lux: lux,
+                sight : sight,
+                wc : wc,
 
-                roomStatus : 1
+                intRoomStatus : 1
         };
 
             console.log(params);
