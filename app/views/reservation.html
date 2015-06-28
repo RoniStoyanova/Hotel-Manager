@@ -2,8 +2,13 @@
             <article class="redLine">
                 <h1 class="formName"> RESERVATION </h1>
             </article>
-            <form action="">
+            <form id="reservation-form" action="">
                 <h3> Room information </h3>
+                <div class="container">
+                    <p>Room number:</p>
+                    <input class="field" type="number" name="roomNumber">
+                    <p class='error'></p>
+                </div>
                 <!-- Date from -->
                 <div class='container'>
                     <p> Check-out Date </p>
@@ -19,18 +24,18 @@
                 <!-- reservation Status -->
                 <div class="radio container">
                     <label>
-                        <input type="radio" value="" name="reservationStatus"> Confirmed
+                        <input id="status1" type="radio" value="" name="reservationStatus"> Confirmed
                     </label>
                     <label>
-                        <input type="radio" value="" name="reservationStatus"> Not confirmed
+                        <input id="status2" type="radio" value="" name="reservationStatus"> Not confirmed
                     </label>
                 <!-- </div>
                 <div class="radio container"> -->
                     <label>
-                        <input type="radio" value="" name="reservationStatus"> Paid
+                        <input id="status3" type="radio" value="" name="reservationStatus"> Paid
                     </label>
                     <label>
-                        <input type="radio" value="" name="reservationStatus"> Annulled
+                        <input id="status4" type="radio" value="" name="reservationStatus"> Annulled
                     </label>
                     <p class='error'></p>
                 </div>
@@ -45,7 +50,7 @@
                     </div>
                     <!-- Last name -->
                     <div class='container'>
-                        <input class="field" type="text" placeholder='Last name' name="familyName">
+                        <input class="field" type="text" placeholder='Last name' name="lastName">
                         <p class='error'></p>
                     </div>
                 </div>
@@ -75,7 +80,7 @@
                 </div>
                 
                 <div class='container'>
-                    <button class="field button">RESERVATION</button>
+                    <button id="reservationButton" class="field button">RESERVATION</button>
                 </div>
             </form>
         </div>

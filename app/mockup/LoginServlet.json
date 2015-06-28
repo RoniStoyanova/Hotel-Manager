@@ -1,9 +1,29 @@
-{
-"userID":"1",
-"firstName":"Veronika",
-"lastName":"Stoyanova",
-"userName":"Veronika",
-"password":"123456",
-"eMail":"roni@gmail.com",
-"userRole":"admin"
-}
+[
+  {
+  "userID":"1",
+  "firstName":"Veronika",
+  "lastName":"Stoyanova",
+  "userName":"Veronika",
+  "password":"123456",
+  "eMail":"roni@gmail.com",
+  "userRole":"admin"
+  },
+  {
+    "userID":"1",
+    "firstName":"Veronika",
+    "lastName":"Stoyanova",
+    "userName":"Veronika",
+    "password":"123456",
+    "eMail":"roni@gmail.com",
+    "userRole":"admin"
+  },
+  {
+    "userID":"1",
+    "firstName":"Veronika",
+    "lastName":"Stoyanova",
+    "userName":"Veronika",
+    "password":"123456",
+    "eMail":"roni@gmail.com",
+    "userRole":"admin"
+  }
+]

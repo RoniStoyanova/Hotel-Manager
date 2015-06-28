@@ -358,6 +358,8 @@ h3 {
     margin: 0;
 }
 
+/*ROOMS VIEW*/
+
 .rooms {
     padding: 15px;
     width: 600px;
@@ -366,7 +368,61 @@ h3 {
     background: rgba(83,83,83,0.9);
 }
 
+.redLineType {
+    background: rgba(155,8,8,0.8);
+    /*text-align: center;*/
+    border-bottom: 2px solid #1f1f1f;
+    /*font-weight: bold;*/
+    color: #ffffff;
+    padding: 5px;
+}
 
+.ButtonReservation {
+    clear: both;
+    float: right;
+    /*width: 100px;*/
+    height: 30px;
+    background: rgba(155,8,8,0.8);
+    background-image: none;
+    border: 2px solid #1f1f1f;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(31,31,31,1);
+    font-family: myFont;
+    text-align: center;
+    margin-right: 2px;
+}
+
+.ButtonInformation {
+
+    float: right;
+    /*width: 100px;*/
+    height: 30px;
+    background: rgba(155,8,8,0.8);
+    background-image: none;
+    border: 2px solid #1f1f1f;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(31,31,31,1);
+    font-family: myFont;
+    text-align: center;
+    margin-right: 2px;
+}
+
+/*ACCOUNT VIEW */
+.accounts {
+    padding: 15px;
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid #494949;
+    background: rgba(83,83,83,0.9);
+}
+
+.guests {
+    padding: 15px;
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid #494949;
+    background: rgba(83,83,83,0.9);
+}
 
 
 @font-face {

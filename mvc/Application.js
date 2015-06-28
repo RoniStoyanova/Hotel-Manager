@@ -44,7 +44,7 @@ var Application = (function(config){
         var container = document.querySelector('[data-role="app-container"]');
         // if we have valid route set up in the configuration
         if (this.config.routes[hash]) {
-            // loading the thext content for the view
+            // loading the text content for the view
             var view = this.view.getView(this.config.routes[hash].template);
             // find the controller id
             var controllerID = this.config.routes[hash].controller;
