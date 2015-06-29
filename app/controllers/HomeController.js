@@ -5,12 +5,13 @@ function HomeController() {
 HomeController.prototype.onCreateView = function (view) {
 
     ShowBars();
+    adminSetup();
 
     var form = new FilterForm();
     var domForm = view.querySelector("#filter-form");
     domForm.addEventListener("submit",function(e) {
         e.preventDefault();
-    })
+    });
 
     view.querySelector("#filterButton").addEventListener("click", function(){
 
@@ -18,11 +19,11 @@ HomeController.prototype.onCreateView = function (view) {
         if (!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
-            // Да взема името на сервлета
             var url = Application.getConfigValue("dataPath") + '/ViewGenerationServlet';
             var params = {
-                //dateFrom : form.dateFrom, dateTo: form.dateTo, beds: form.guests
-                roomId:2
+                dateFrom : form.dateFrom,
+                dateTo: form.dateTo,
+                beds: form.guests
             };
             console.log(params);
             var promise = Ajax.postRequest(url, params, true);
@@ -36,10 +37,10 @@ HomeController.prototype.onCreateView = function (view) {
     }, false);
 
 //    view.querySelector("#filterButton").addEventListener("click", function(){
-//var userId=localStorage.getItem('userId');
+//      var userId=localStorage.getItem('userId');
 //        alert(userId);
 //
 //    }, false);
-}
+};
 
 

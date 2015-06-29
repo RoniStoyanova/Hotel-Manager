@@ -1,6 +1,6 @@
 
 {
-  "roomID" : 1,
+  "id" : 1,
   "roomNumber" : 1,
   "beds" : 2,
   "price" : 20,

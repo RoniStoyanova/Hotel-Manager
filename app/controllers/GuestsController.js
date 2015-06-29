@@ -4,6 +4,7 @@ function GuestsController() {
 
 GuestsController.prototype.onCreateView = function (view) {
     ShowBars();
+    adminSetup();
 
     var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
     var params = {
@@ -28,12 +29,6 @@ GuestsController.prototype.onCreateView = function (view) {
             guestsView.appendChild(guestName);
             guestName.innerHTML = response[i].firstName + " " + response[i].lastName;
             guestName.style.display = "inline";
-
-            //Button for room information
-            var infoButton = document.createElement("button");
-            guestsView.appendChild(infoButton);
-            infoButton.innerHTML = "information";
-            infoButton.className = "ButtonInformation";
 
         }
     });

@@ -5,6 +5,7 @@ function RegistrationController() {
 RegistrationController.prototype.onCreateView = function (view) {
 
     ShowBars();
+    adminSetup();
 
     var form = new RegistrationForm();
     var domForm = view.querySelector("#registration-form");

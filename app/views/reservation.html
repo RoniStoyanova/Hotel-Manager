@@ -1,86 +1,74 @@
- <div class='reservation'> 
-            <article class="redLine">
-                <h1 class="formName"> RESERVATION </h1>
-            </article>
-            <form id="reservation-form" action="">
-                <h3> Room information </h3>
-                <div class="container">
-                    <p>Room number:</p>
-                    <input class="field" type="number" name="roomNumber">
-                    <p class='error'></p>
-                </div>
-                <!-- Date from -->
-                <div class='container'>
-                    <p> Check-out Date </p>
-                    <input class="field" type="date" name="dateFrom">
-                    <p class='error'></p>
-                </div>
-                <!-- Date to -->
-                <div class='container'>
-                    <p>Check-out Date </p>
-                    <input class="field" type="date" name="dateTo">
-                    <p class='error'></p>
-                </div>
-                <!-- reservation Status -->
-                <div class="radio container">
-                    <label>
-                        <input id="status1" type="radio" value="" name="reservationStatus"> Confirmed
-                    </label>
-                    <label>
-                        <input id="status2" type="radio" value="" name="reservationStatus"> Not confirmed
-                    </label>
-                <!-- </div>
-                <div class="radio container"> -->
-                    <label>
-                        <input id="status3" type="radio" value="" name="reservationStatus"> Paid
-                    </label>
-                    <label>
-                        <input id="status4" type="radio" value="" name="reservationStatus"> Canceled
-                    </label>
-                    <p class='error'></p>
-                </div>
-                </form>
-
-                <h3> Personal information </h3>
-                <!-- First name -->
-                <!--<div>-->
-                    <div class='container'>
-                        <input class="field" type="text" placeholder='First name' name="firstName"> 
-                        <p class='error'></p>
-                    </div>
-                    <!-- Last name -->
-                    <div class='container'>
-                        <input class="field" type="text" placeholder='Last name' name="lastName">
-                        <p class='error'></p>
-                    </div>
-                <!--</div>-->
-                <!--<div>-->
-                    <!-- EGN -->
-                    <div class='container'>
-                        <input class="field" type="text" placeholder='EGN' name="egn">
-                        <p class='error'></p>
-                    </div>
-                    <!-- Passport -->
-                    <div class='container'>
-                        <input class="field" type="text" placeholder='Passport' name="passport">
-                        <p class='error'></p>
-                    </div>
-                <!--</div>-->
-                <!-- E-mail -->
-                <!--<div>-->
-                    <div class='container'>
-                        <input class="field" type="email" placeholder='E-mail address' name="email">
-                        <p class='error'></p>
-                    </div>
-                <!--</div>-->
-                <!-- Phone number -->
-                <!--<div class='container'>-->
-                        <!--<input class="field" type="text" placeholder='Phone number' name="phone">-->
-                        <!--<p class='error'></p>-->
-                <!--</div>-->
-                
-                <div class='container'>
-                    <button id="reservationButton" class="field button">RESERVATION</button>
-                </div>
-            </form>
+<div class='reservation'>
+    <article class="redLine">
+        <h1 class="formName"> RESERVATION </h1>
+    </article>
+    <form id="reservation-form" action="">
+        <h3> Room information </h3>
+        <div class="container">
+            <p>Room number:</p>
+            <input class="field" type="number" name="roomNumber">
+            <p class='error'></p>
         </div>
+        <!-- Date from -->
+        <div class='container'>
+            <p> Check-out Date </p>
+            <input class="field" type="date" name="dateFrom">
+            <p class='error'></p>
+        </div>
+        <!-- Date to -->
+        <div class='container'>
+            <p>Check-out Date </p>
+            <input class="field" type="date" name="dateTo">
+            <p class='error'></p>
+        </div>
+        <!-- reservation Status -->
+        <div class="radio container">
+            <label>
+                <input id="status1" type="radio" value="" name="reservationStatus"> Confirmed
+            </label>
+            <label>
+                <input id="status2" type="radio" value="" name="reservationStatus"> Not confirmed
+            </label>
+        <div class="radio container">
+            <label>
+                <input id="status3" type="radio" value="" name="reservationStatus"> Paid
+            </label>
+            <label>
+                <input id="status4" type="radio" value="" name="reservationStatus"> Canceled
+            </label>
+            <p class='error'></p>
+        </div>
+
+
+        <h3> Personal information </h3>
+            <!-- First name -->
+            <div class='container'>
+                <input class="field" type="text" placeholder='First name' name="firstName">
+                <p class='error'></p>
+            </div>
+            <!-- Last name -->
+            <div class='container'>
+                <input class="field" type="text" placeholder='Last name' name="lastName">
+                <p class='error'></p>
+            </div>
+            <!-- EGN -->
+            <div class='container'>
+                <input class="field" type="text" placeholder='EGN' name="egn">
+                <p class='error'></p>
+            </div>
+            <!-- Passport -->
+            <div class='container'>
+                <input class="field" type="text" placeholder='Passport' name="passport">
+                <p class='error'></p>
+            </div>
+            <!-- E-mail -->
+            <div class='container'>
+                <input class="field" type="email" placeholder='E-mail address' name="email">
+                <p class='error'></p>
+            </div>
+
+        <div class='container'>
+            <button id="reservationButton" class="field button">RESERVATION</button>
+        </div>
+    </form>
+</div>

@@ -5,7 +5,7 @@ function LoginController() {
 LoginController.prototype.onCreateView = function (view) {
 
     ShowBars();
-
+    //adminSetup();
 
     var form = new LoginForm();
     var domForm = view.querySelector("#login-form");
@@ -28,11 +28,13 @@ LoginController.prototype.onCreateView = function (view) {
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);
                 var response = JSON.parse(xhr.responseText);
-    localStorage.setItem('userId',response.id);
-                var userId=localStorage.getItem('userId')
-               window.location.hash = '#/home';
-                alert(userId);
 
+                localStorage.setItem('userId',response.id);
+                localStorage.setItem('userRole',response.userRole);
+                var userId=localStorage.getItem('userId');
+                var userRole = localStorage.getItem('userRole');
+
+                window.location.hash = '#/home';
 
             });
             promise.setOnFail(function(xhr) {

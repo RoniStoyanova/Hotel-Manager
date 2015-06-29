@@ -7,3 +7,18 @@ function ShowBars() {
         document.querySelector(".information").style.display = "hidden";
     }
 }
+
+function adminSetup() {
+    var userRole = localStorage.getItem("userRole");
+    if ( userRole == 'admin') {
+        document.querySelector(".adminSetup1").style.display = "list-item";
+        document.querySelector(".adminSetup2").style.display = "list-item";
+    } else {
+        document.querySelector(".adminSetup1").style.display = "none";
+        document.querySelector(".adminSetup2").style.display = "none";
+    }
+}
+
+function returnID(clicked_id){
+   return clicked_id;
+}

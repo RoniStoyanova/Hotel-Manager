@@ -12,6 +12,9 @@ function RoomForm () {
     this.bathroom      = '';
     this.kitchen       = '';
     this.livingRoom    = '';
+    this.wc = '';
+    this.sight = '';
+    this.lux = '';
 
     this.roomStatus = '';
 

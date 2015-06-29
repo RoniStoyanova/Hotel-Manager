@@ -16,13 +16,14 @@
     <script type="text/javascript" src="app/controllers/LoginController.js"></script>
     <script type="text/javascript" src="app/controllers/HomeController.js"></script>
     <script type="text/javascript" src="app/controllers/RoomController.js"></script>
-    <script type="text/javascript" src="app/controllers/CreateRoomController.js"></script>
+    <script type="text/javascript" src="app/controllers/RoomCreateController.js"></script>
     <script type="text/javascript" src="app/controllers/CalendarController.js"></script>
     <script type="text/javascript" src="app/controllers/GuestsController.js"></script>
     <script type="text/javascript" src="app/controllers/AccountsController.js"></script>
-    <script type="text/javascript" src="app/controllers/ReservationController.js"></script>
     <script type="text/javascript" src="app/controllers/RegistrationController.js"></script>
-    <script type="text/javascript" src="app/controllers/InfoAccountController.js"></script>
+    <script type="text/javascript" src="app/controllers/AccountInformationController.js"></script>
+    <script type="text/javascript" src="app/controllers/RoomViewController.js"></script>
+    <script type="text/javascript" src="app/controllers/AccountsViewController.js"></script>
 
     <script type="text/javascript" src="app/models/LoginForm.js"></script>
     <script type="text/javascript" src="app/models/RegistrationForm.js"></script>
@@ -56,17 +57,25 @@
                         controller: 'accountInfo',
                         template: 'accountInfo.html'
                     },
+                    '/accounts': {
+                        controller: 'accounts',
+                        template: 'accounts.html'
+                    },
+                    '/createAccount': {
+                        controller: 'createAccount',
+                        template: 'registration.html'
+                    },
                     '/rooms': {
                         controller: 'rooms',
                         template: 'rooms.html'
                     },
+                    '/roomInformation': {
+                        controller: 'roomView',
+                        template: 'roomViewEdit.html'
+                    },
                     '/createRoom': {
                         controller: 'createRoom',
                         template: 'createRoom.html'
-                    },
-                    '/reservation': {
-                        controller: 'reservation',
-                        template: 'reservation.html'
                     },
                     '/calendar': {
                         controller: 'calendar',
@@ -75,27 +84,20 @@
                     '/guests': {
                         controller: 'guests',
                         template: 'guests.html'
-                    },
-                    '/accounts': {
-                        controller: 'accounts',
-                        template: 'accounts.html'
-                    },
-                    '/createAccount': {
-                        controller: 'createAccount',
-                        template: 'registration.html'
                     }
                 },
                 controllers: {
                     'login' : LoginController,
                     'home' : HomeController,
-                    'accountInfo' : InfoAccountController,
+                    'accountInfo' : AccountInformationController,
                     'rooms': RoomController,
-                    'createRoom': CreateRoomController,
+                    'createRoom': RoomCreateController,
                     'calendar': CalendarController,
                     'guests': GuestsController ,
                     'accounts' : AccountsController,
                     'createAccount': RegistrationController,
-                    'reservation' : ReservationController
+                    'roomView' : RoomViewController,
+                    'accountView' : AccountsViewController
                 }
             };
 
@@ -112,8 +114,8 @@
     <header class='header'>
         <div class='logo'>
             <div class="information">
-                <a id='accountInfo' href="#/accountInfo">Account info</a>
-                <a id='logOut' href="">Log out</a>
+                <a id='accountInfo' class="informationLine" href="#/accountInfo">Account info</a>
+                <a id='logOut' class="informationLine" href="">Log out</a>
             </div>
         </div>
     </header>
@@ -128,7 +130,7 @@
                 <li>
                     <a id="rooms" href="#/rooms">ROOMS</a>
                         <ul>
-                            <li><a href="#/createRoom">CREATE ROOM</a></li>
+                            <li class="adminSetup1"><a href="#/createRoom">CREATE ROOM</a></li>
                         </ul>
                 </li> 
                 <li>
@@ -140,7 +142,7 @@
                 <li>
                     <a href="#/accounts">ACCOUNTS</a>
                         <ul>
-                            <li><a href="#/createAccount">CREATE ACCOUNT</a></li>
+                            <li class="adminSetup2"><a href="#/createAccount">CREATE ACCOUNT</a></li>
                         </ul>
                 </li>
                <!--  <li class="navRight">

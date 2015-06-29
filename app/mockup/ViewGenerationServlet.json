@@ -1,0 +1,16 @@
+{
+  "rooms" : [
+    {
+      "roomID" : 1
+    },
+    {
+      "roomID" : 3
+    },
+    {
+      "roomID" : 4
+    },
+    {
+      "roomID" : 5
+    }
+  ]
+}

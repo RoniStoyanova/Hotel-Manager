@@ -1,10 +1,11 @@
-function InfoAccountController() {
+function AccountInformationController() {
 
 }
 
-InfoAccountController.prototype.onCreateView = function (view) {
+AccountInformationController.prototype.onCreateView = function (view) {
 
     ShowBars();
+    adminSetup();
 
     function makeFormDisable() {
         view.querySelector("#infoFirstName").disabled = true;
@@ -34,28 +35,24 @@ InfoAccountController.prototype.onCreateView = function (view) {
 
     form.loadFromForm(domForm);
     var url = Application.getConfigValue("dataPath") + '/LoginServlet';
+
+    var userId = localStorage.getItem("userId");
     var params = {
-        userId : "1"
+        id : userId
     };
     var promise = Ajax.getRequest(url, params, true);
     promise.setOnSuccess(function (xhr) {
         console.log(xhr.responseText);
         var response = JSON.parse(xhr.responseText);
-        //"firstName":"Veronika",
-        //    "lastName":"Stoyanova",
-        //    "userName":"Veronika",
-        //    "password":"123456",
-        //    "eMail":"roni@gmail.com",
-        //    "userRole":"admin"
-        console.log(response.firstName);
-        view.querySelector("#infoFirstName").value = response[0].firstName;
-        view.querySelector("#infoLastName").value = response[0].lastName;
-        view.querySelector("#infoUserName").value = response[0].userName;
-        view.querySelector("#infoEmail").value = response[0].eMail;
-        view.querySelector("#infoPassword").value = response[0].password;
-        view.querySelector("#infoConfirmPassword").value = response[0].password;
 
-        if (response[0].userRole == 'admin') {
+        view.querySelector("#infoFirstName").value = response.firstName;
+        view.querySelector("#infoLastName").value = response.lastName;
+        view.querySelector("#infoUserName").value = response.userName;
+        view.querySelector("#infoEmail").value = response.eMail;
+        view.querySelector("#infoPassword").value = response.password;
+        view.querySelector("#infoConfirmPassword").value = response.password;
+
+        if (response.userRole == 'admin') {
             view.querySelector("#infoRadio1").checked = true;
         } else {
             view.querySelector("#infoRadio1").checked = false;
@@ -81,8 +78,7 @@ InfoAccountController.prototype.onCreateView = function (view) {
         if(!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
-            url = Application.getConfigValue("dataPath") + '/LoginServlet';
-
+            url = Application.getConfigValue("dataPath") + '/UserEditServlet';
             var position;
             if (view.querySelector("#infoRadio1").checked) {
                 position = "admin";

@@ -1,10 +1,11 @@
-function CreateRoomController() {
+function RoomCreateController() {
 
 }
 
-CreateRoomController.prototype.onCreateView = function (view) {
+RoomCreateController.prototype.onCreateView = function (view) {
 
     ShowBars();
+    adminSetup();
 
     var form = new RoomForm();
     var domForm = view.querySelector("#createroom-form");
