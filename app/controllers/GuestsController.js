@@ -29,6 +29,7 @@ GuestsController.prototype.onCreateView = function (view) {
             guestsView.appendChild(guestName);
             guestName.innerHTML = response[i].firstName + " " + response[i].lastName;
             guestName.style.display = "inline";
+            guestName.className = "informationLine";
 
         }
     });
@@ -36,5 +37,14 @@ GuestsController.prototype.onCreateView = function (view) {
         console.log(xhr.responseText);
     });
 
-}
+    //var guestParent = view.querySelector("#guestsContainer");
+    //guestParent.addEventListener("click",function showInfo(e) {
+    //    if (e.target !== e.currentTarget) {
+    //        localStorage.setItem('reservationId', e.target.id);
+    //        window.location.hash = '#/roomInformation';
+    //    }
+    //    e.stopPropagation();
+    //}, false);
+
+};
 

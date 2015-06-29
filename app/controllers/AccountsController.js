@@ -29,6 +29,7 @@ AccountsController.prototype.onCreateView = function (view) {
             accountView.appendChild(accountName);
             accountName.innerHTML = response[i].firstName + " " + response[i].lastName;
             accountName.style.display = "inline";
+            accountName.className = "informationLine";
 
         }
 
@@ -36,4 +37,14 @@ AccountsController.prototype.onCreateView = function (view) {
     promise.setOnFail(function(xhr) {
         console.log(xhr.responseText);
     });
-}
+
+    var accountParent = view.querySelector("#accountsContainer");
+    accountParent.addEventListener("click",function showInfo(e) {
+        if (e.target !== e.currentTarget) {
+            localStorage.setItem('accountId', e.target.id);
+            window.location.hash = '#/accountView';
+        }
+        e.stopPropagation();
+    }, false);
+
+};

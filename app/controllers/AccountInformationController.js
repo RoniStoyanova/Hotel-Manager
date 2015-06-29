@@ -19,8 +19,8 @@ AccountInformationController.prototype.onCreateView = function (view) {
     }
 
     function makeFormEnable() {
-        view.querySelector("#infoFirstName").disabled = false;
-        view.querySelector("#infoLastName").disabled = false;
+        //view.querySelector("#infoFirstName").disabled = false;
+        //view.querySelector("#infoLastName").disabled = false;
         view.querySelector("#infoUserName").disabled = false;
         view.querySelector("#infoEmail").disabled = false;
         view.querySelector("#infoPassword").disabled = false;

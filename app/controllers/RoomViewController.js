@@ -7,6 +7,16 @@ RoomViewController.prototype.onCreateView = function (view) {
     adminSetup();
 
     view.querySelector("#saveRoomButton").style.display = "none";
+    var userRole = localStorage.getItem('userRole');
+    if (userRole == "admin") {
+        view.querySelector(".reservation").style.display = "none";
+        view.querySelector(".roomInfo").style.float = "none";
+        view.querySelector(".roomInfo").style.margin = "15px auto";
+
+    } else {
+        view.querySelector("#editRoomButton").style.display = "none";
+        view.querySelector(".extras").style.margin = "18px 0"
+    }
 
     function makeFormDisable() {
         view.querySelector("#roomNumber").disabled = true;
@@ -27,7 +37,7 @@ RoomViewController.prototype.onCreateView = function (view) {
     }
 
     function makeFormEnable() {
-        view.querySelector("#roomNumber").disabled = false;
+        //view.querySelector("#roomNumber").disabled = false;
         view.querySelector("#beds").disabled = false;
         view.querySelector("#price").disabled = false;
         view.querySelector("#description").disabled = false;
@@ -175,17 +185,12 @@ RoomViewController.prototype.onCreateView = function (view) {
 
     var userRole = localStorage.getItem("userRole");
 
-
-
         view.querySelector("#editRoomButton").addEventListener("click", function () {
-            if (userRole == 'admin') {
-                makeFormEnable();
 
-                view.querySelector("#editRoomButton").style.display = "none";
-                view.querySelector("#saveRoomButton").style.display = "block";
-            } else {
-                alert('You don\'t have administrator rights!');
-            }
+            makeFormEnable();
+
+            view.querySelector("#editRoomButton").style.display = "none";
+            view.querySelector("#saveRoomButton").style.display = "block";
 
         }, false);
 

@@ -1,5 +1,4 @@
-
-  {
+{
   "id":"1",
   "firstName":"Veronika",
   "lastName":"Stoyanova",
@@ -7,4 +6,4 @@
   "password":"123456",
   "eMail":"roni@gmail.com",
   "userRole":"admin"
-  }
+}

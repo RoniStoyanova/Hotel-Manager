@@ -18,7 +18,3 @@ function adminSetup() {
         document.querySelector(".adminSetup2").style.display = "none";
     }
 }
-
-function returnID(clicked_id){
-   return clicked_id;
-}

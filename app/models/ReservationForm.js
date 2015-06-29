@@ -8,7 +8,6 @@ function ReservationForm(){
     this.egn            = '';
     this.passport       = '';
     this.email          = '';
-    //this.phone          = '';
 
     Model.call(this);
 

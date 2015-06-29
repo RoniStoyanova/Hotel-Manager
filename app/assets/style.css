@@ -232,7 +232,6 @@ nav ul ul li a:hover {
 .addExtras {
   width: 400px;
   margin: 20px auto;
-
 }
 
 .addExtras p{
@@ -267,7 +266,7 @@ nav ul ul li a:hover {
 
 .fieldFilter {
   width: 200px;
-  height: 35px;
+  height: 25px;
   background: #fff;
   background-image: none;
   border: 1px solid #494949;
@@ -283,7 +282,6 @@ nav ul ul li a:hover {
   font-family: myFont;
 
 }
-
 
 /*FORM STYLE*/
 .redLine {
@@ -328,8 +326,6 @@ nav ul ul li a:hover {
   text-align: center;
 }
 
-
-
 .checkBox {
   font-family: myFont;
   text-align: center;
@@ -370,6 +366,7 @@ h3 {
 
 .accountFieldInfo {
     margin: 0;
+    height: 25px;
 }
 
 /*ROOMS VIEW*/
@@ -437,9 +434,9 @@ h3 {
     height: 20px;
     background-color: #fff;
     background-image: none;
-    border: 3px solid #494949;
+    border: 1px solid #494949;
     border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 1px 1px 5px rgba(100,100,100,.75);
     font-family: myFont;
     text-align: center;
 }
@@ -463,6 +460,7 @@ h3 {
 
 .extras {
     display: inline-block;
+    width: 400px
 }
 .extras p{
     color: white;

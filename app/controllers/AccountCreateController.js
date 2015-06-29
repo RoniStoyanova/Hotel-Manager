@@ -1,8 +1,8 @@
-function RegistrationController() {
+function AccountCreateController() {
 
 }
 
-RegistrationController.prototype.onCreateView = function (view) {
+AccountCreateController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();

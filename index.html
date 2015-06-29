@@ -17,13 +17,14 @@
     <script type="text/javascript" src="app/controllers/HomeController.js"></script>
     <script type="text/javascript" src="app/controllers/RoomController.js"></script>
     <script type="text/javascript" src="app/controllers/RoomCreateController.js"></script>
+    <script type="text/javascript" src="app/controllers/RoomViewController.js"></script>
     <script type="text/javascript" src="app/controllers/CalendarController.js"></script>
     <script type="text/javascript" src="app/controllers/GuestsController.js"></script>
+    <script type="text/javascript" src="app/controllers/GuestViewController.js"></script>
     <script type="text/javascript" src="app/controllers/AccountsController.js"></script>
-    <script type="text/javascript" src="app/controllers/RegistrationController.js"></script>
+    <script type="text/javascript" src="app/controllers/AccountCreateController.js"></script>
     <script type="text/javascript" src="app/controllers/AccountInformationController.js"></script>
-    <script type="text/javascript" src="app/controllers/RoomViewController.js"></script>
-    <script type="text/javascript" src="app/controllers/AccountsViewController.js"></script>
+    <script type="text/javascript" src="app/controllers/AccountViewController.js"></script>
 
     <script type="text/javascript" src="app/models/LoginForm.js"></script>
     <script type="text/javascript" src="app/models/RegistrationForm.js"></script>
@@ -65,6 +66,10 @@
                         controller: 'createAccount',
                         template: 'registration.html'
                     },
+                    '/accountView': {
+                        controller: 'accountView',
+                        template: 'accountView.html'
+                    },
                     '/rooms': {
                         controller: 'rooms',
                         template: 'rooms.html'
@@ -90,14 +95,16 @@
                     'login' : LoginController,
                     'home' : HomeController,
                     'accountInfo' : AccountInformationController,
+                    'createAccount': AccountCreateController,
+                    'accounts' : AccountsController,
+                    'accountView' : AccountViewController,
                     'rooms': RoomController,
                     'createRoom': RoomCreateController,
-                    'calendar': CalendarController,
-                    'guests': GuestsController ,
-                    'accounts' : AccountsController,
-                    'createAccount': RegistrationController,
                     'roomView' : RoomViewController,
-                    'accountView' : AccountsViewController
+
+                    'guests': GuestsController ,
+                    'guestView' : GuestViewController,
+                    'calendar': CalendarController
                 }
             };
 
@@ -139,18 +146,12 @@
                 <li>
                     <a href="#/guests">GUESTS</a>
                 </li>
-                <li>
+                <li class="adminSetup2">
                     <a href="#/accounts">ACCOUNTS</a>
                         <ul>
-                            <li class="adminSetup2"><a href="#/createAccount">CREATE ACCOUNT</a></li>
+                            <li ><a href="#/createAccount">CREATE ACCOUNT</a></li>
                         </ul>
                 </li>
-               <!--  <li class="navRight">
-                    <a href="#">Log out</a>
-                </li>
-                <li class="navRight">
-                    <a href="#">Account info</a>
-                </li> -->
             </ul>
         </div>  
     </nav>
