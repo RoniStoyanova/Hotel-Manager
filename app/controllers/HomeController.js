@@ -29,18 +29,39 @@ HomeController.prototype.onCreateView = function (view) {
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
                 console.log(xhr.responseText);
-            })
+                var response = JSON.parse(xhr.responseText);
+                for ( var i = 0; i < response.length; i++) {
+
+                    var freeRoomView = document.createElement("div");
+                    document.querySelector(".freeRooms").appendChild(freeRoomView);
+                    //freeRoomView.style.display = "inline-block";
+                    freeRoomView.style.width = "100%";
+                    freeRoomView.style.paddingTop = "5px";
+                    freeRoomView.style.borderBottom = "1px solid black";
+
+                    var freeRoomNumber = document.createElement("a");
+                    freeRoomView.appendChild(freeRoomNumber);
+                    freeRoomNumber.innerHTML = "Room number: " + response[i].roomId;
+                    freeRoomNumber.style.display = "block";
+                    freeRoomNumber.id = response[i].roomId;
+                    freeRoomNumber.className = "informationLine";
+                    freeRoomNumber.style.padding = "5px";
+                }
+            });
             promise.setOnFail(function(xhr) {
                 console.log(xhr.responseText);
             })
         }
     }, false);
 
-//    view.querySelector("#filterButton").addEventListener("click", function(){
-//      var userId=localStorage.getItem('userId');
-//        alert(userId);
-//
-//    }, false);
+    var freeRoomParent = view.querySelector(".freeRooms");
+    freeRoomParent.addEventListener("click",function showInfo(e) {
+        if (e.target !== e.currentTarget) {
+            localStorage.setItem('roomId', e.target.id);
+            window.location.hash = '#/roomInformation';
+        }
+        e.stopPropagation();
+    }, false);
 };
 
 

@@ -1,27 +1,40 @@
 [
   {
-    "roomID" : 1,
+    "roomId" : 1,
     "reservationStatus" : 2,
-    "dateFrom" : "2015-03-24",
-    "dateTo" : "2015-04-01",
-    "firstName" : "Veronika",
-    "lastName" : "Stoyanova",
-    "passport" : "22222222",
+    "dateFrom" : "2015-07-24",
+    "dateTo" : "2015-07-27",
+    "firstName" : "Iavn",
+    "lastName" : "Ivanov",
+    "passport" : "1111111111",
     "egn" : "11111111",
-    "eMail" : "roni@gmail.com",
-    "phone" : "0043950349543"
+    "eMail" : "ivan@gmal.com",
+    "phone" : "0888 555 222"
   },
 
   {
-    "roomID" : 1,
+    "roomId" : 1,
     "reservationStatus" : 2,
-    "dateFrom" : "2015-03-24",
-    "dateTo" : "2015-04-01",
+    "dateFrom" : "2015-08-04",
+    "dateTo" : "2015-08-07",
+    "firstName" : "Georgi",
+    "lastName" : "Georgiev",
+    "passport" : "22222222",
+    "egn" : "2222222222",
+    "eMail" : "georgi@gmail.com",
+    "phone" : "0888 555 555"
+  },
+
+  {
+    "roomId" : 2,
+    "reservationStatus" : 2,
+    "dateFrom" : "2015-09-15",
+    "dateTo" : "2015-09-20",
     "firstName" : "Veronika",
     "lastName" : "Stoyanova",
-    "passport" : "22222222",
-    "egn" : "11111111",
-    "eMail" : "roni@gmail.com",
-    "phone" : "0043950349543"
+    "passport" : "3333333333",
+    "egn" : "3333333333",
+    "eMail" : "veronika@gmail.com",
+    "phone" : "0888 555 777"
   }
 ]

@@ -23,7 +23,7 @@ RoomController.prototype.onCreateView = function (view) {
 
                 var roomView = document.createElement("div");
                 document.querySelector(".single").appendChild(roomView);
-                roomView.style.display = "inline-block";
+                //roomView.style.display = "inline-block";
                 roomView.style.width = "100%";
                 roomView.style.paddingTop = "3px";
                 roomView.style.borderBottom = "1px solid black";
@@ -31,16 +31,17 @@ RoomController.prototype.onCreateView = function (view) {
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
                 roomNumber.innerHTML = "Room number: " + response[i].roomNumber;
-                roomNumber.style.display = "inline";
+                roomNumber.style.display = "block";
                 roomNumber.id = response[i].id;
                 roomNumber.className = "informationLine";
+                roomNumber.style.paddingBottom = "5px";
 
 
             } else if (response[i].beds == 2) {
 
                 var roomView =document.createElement("div");
                 document.querySelector(".double").appendChild(roomView);
-                roomView.style.display = "inline-block";
+                //roomView.style.display = "inline-block";
                 roomView.style.width = "100%";
                 roomView.style.paddingTop = "3px";
                 roomView.style.borderBottom = "1px solid black";
@@ -48,15 +49,16 @@ RoomController.prototype.onCreateView = function (view) {
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
                 roomNumber.innerHTML = "Room number: " + response[i].roomNumber;
-                roomNumber.style.display = "inline";
+                roomNumber.style.display = "block";
                 roomNumber.id = response[i].id;
                 roomNumber.className = "informationLine";
+                roomNumber.style.paddingBottom = "5px";
 
             } else if (response[i].beds == 3){
 
                 var roomView = document.createElement("DIV");
                 document.querySelector(".triple").appendChild(roomView);
-                roomView.style.display = "inline-block";
+                //roomView.style.display = "inline-block";
                 roomView.style.width = "100%";
                 roomView.style.paddingTop = "3px";
                 roomView.style.borderBottom = "1px solid black";
@@ -64,25 +66,27 @@ RoomController.prototype.onCreateView = function (view) {
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
                 roomNumber.innerHTML = "Room number :" + response[i].roomNumber;
-                roomNumber.style.display = "inline";
+                roomNumber.style.display = "block";
                 roomNumber.id = response[i].id;
                 roomNumber.className = "informationLine"
+                roomNumber.style.paddingBottom = "5px";
 
             } else {
 
                 var roomView = document.createElement("div");
                 document.querySelector(".more").appendChild(roomView);
-                roomView.style.display = "inline-block";
+                //roomView.style.display = "inline-block";
                 roomView.style.width = "100%";
-                roomView.style.paddingTop = "3px";
+                roomView.style.paddingTop = "5px";
                 roomView.style.borderBottom = "1px solid black";
 
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
                 roomNumber.innerHTML = "Room number :" + response[i].roomNumber;
-                roomNumber.style.display = "inline";
                 roomNumber.id = response[i].id;
                 roomNumber.className = "informationLine"
+                roomNumber.style.padding = "5px";
+                roomNumber.style.display = "block";
 
             }
         }

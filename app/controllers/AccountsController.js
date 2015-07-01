@@ -20,17 +20,17 @@ AccountsController.prototype.onCreateView = function (view) {
             //Create container for the account
             var accountView = document.createElement("div");
             document.querySelector("#accountsContainer").appendChild(accountView);
-            accountView.style.display = "inline-block";
+            //accountView.style.display = "inline-block";
             accountView.style.width = "100%";
-            accountView.style.paddingTop = "10px";
+            accountView.style.paddingTop = "5px";
             accountView.style.borderBottom = "1px solid black"
 
-            var accountName = document.createElement("p");
+            var accountName = document.createElement("a");
             accountView.appendChild(accountName);
             accountName.innerHTML = response[i].firstName + " " + response[i].lastName;
-            accountName.style.display = "inline";
+            accountName.style.display = "block";
             accountName.className = "informationLine";
-
+            accountName.style.padding = "5px";
         }
 
     });

@@ -20,16 +20,19 @@ GuestsController.prototype.onCreateView = function (view) {
             //Create container for the account
             var guestsView = document.createElement("div");
             document.querySelector("#guestsContainer").appendChild(guestsView);
-            guestsView.style.display = "inline-block";
+            //guestsView.style.display = "inline-block";
             guestsView.style.width = "100%";
-            guestsView.style.paddingTop = "10px";
+            guestsView.style.paddingTop = "5px";
             guestsView.style.borderBottom = "1px solid black"
 
-            var guestName = document.createElement("p");
+            var guestName = document.createElement("a");
             guestsView.appendChild(guestName);
             guestName.innerHTML = response[i].firstName + " " + response[i].lastName;
-            guestName.style.display = "inline";
+            guestName.style.display = "block";
+            guestName.id = response[i].id;
             guestName.className = "informationLine";
+            guestName.style.padding = "5px";
+
 
         }
     });
@@ -37,14 +40,14 @@ GuestsController.prototype.onCreateView = function (view) {
         console.log(xhr.responseText);
     });
 
-    //var guestParent = view.querySelector("#guestsContainer");
-    //guestParent.addEventListener("click",function showInfo(e) {
-    //    if (e.target !== e.currentTarget) {
-    //        localStorage.setItem('reservationId', e.target.id);
-    //        window.location.hash = '#/roomInformation';
-    //    }
-    //    e.stopPropagation();
-    //}, false);
+    var guestParent = view.querySelector("#guestsContainer");
+    guestParent.addEventListener("click",function showInfo(e) {
+        if (e.target !== e.currentTarget) {
+            localStorage.setItem('reservationId', e.target.id);
+            window.location.hash = '#/guestView';
+        }
+        e.stopPropagation();
+    }, false);
 
 };
 

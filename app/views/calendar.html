@@ -1,0 +1,53 @@
+<div class="calendar">
+    <article class="redLine">
+        <h1 class="formName"> CALENDAR </h1>
+    </article>
+    <div class="calendarContainer">
+        <table id="calendarTable">
+            <tr>
+                <th id="tableHeader" colspan=7></th>
+            </tr>
+            <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+                <th>Thu</th><th>Fri</th><th>Sat</th></tr>
+            <tbody id="tableBody"></tbody>
+            <tr>
+                <td colspan=7>
+
+                    <form id="calendar-form" name="dateChooser">
+                        <select id="month" name="chooseMonth">
+                            <option selected>January
+                            <option>February
+                            <option>March
+                            <option>April
+                            <option>May
+                            <option>June
+                            <option>July
+                            <option>August
+                            <option>September
+                            <option>October
+                            <option>November
+                            <option>December
+                        </select>
+                        <select id="year" name="chooseYear"></select>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class='container'>
+        <button id='showAllReservations' class="field button">SHOW MONTH RESERVATIONS</button>
+    </div>
+    <div class='container'>
+        <button id='showMonthStatistic' class="field button">SHOW MONTH STATISTIC</button>
+    </div>
+    <div class='container'>
+        <button id='showYearStatistic' class="field button">SHOW YEAR STATISTIC</button>
+    </div>
+
+    <div class="pieChart">
+        <canvas id="canvas" width="400" height="300" >
+        </canvas>
+    </div>
+
+</div>
