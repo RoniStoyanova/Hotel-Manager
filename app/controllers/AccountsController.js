@@ -29,6 +29,7 @@ AccountsController.prototype.onCreateView = function (view) {
             accountView.appendChild(accountName);
             accountName.innerHTML = response[i].firstName + " " + response[i].lastName;
             accountName.style.display = "block";
+            accountName.id = response[i].id;
             accountName.className = "informationLine";
             accountName.style.padding = "5px";
         }

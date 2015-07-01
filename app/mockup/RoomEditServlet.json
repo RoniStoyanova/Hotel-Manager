@@ -11,8 +11,8 @@
   "bath" : "false",
   "kitchen" : "false",
   "livingRoom" : "true",
-  "statusRoom" : 1,
   "wc" : "true",
   "sight" : "false",
-  "lux" : "true"
+  "lux" : "true",
+  "statusRoom" : 1
 }

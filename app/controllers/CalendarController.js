@@ -145,7 +145,7 @@ CalendarController.prototype.onCreateView = function (view) {
 
     },false);
 
-    view.querySelector("#showYearStatistic").addEventListener("click", function() {
+    view.querySelector("#showStatistic").addEventListener("click", function() {
 
         var url = Application.getConfigValue("dataPath") + '/PieChartServletYear';
 
