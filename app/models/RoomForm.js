@@ -18,22 +18,23 @@ function RoomForm () {
 
     this.roomStatus = '';
 
+
     Model.call(this);
 
     var _this = this;
 
     this.addValidator('roomNumber', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,1)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
     this.addValidator('beds', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,1)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName,'Field required!')
         }
     });
     this.addValidator('price', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,1)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });

@@ -64,10 +64,12 @@ RoomViewController.prototype.onCreateView = function (view) {
 
     view.querySelector("#reservationButton").addEventListener("click", function () {
 
-        //formReservation.loadFromForm(domFormReservation);
+        formReservation.loadFromForm(domFormReservation);
+        console.log(formReservation);
         //if (!formReservation.validate()) {
         //    formReservation.applyErrorsToForm(domFormReservation);
         //} else {
+            formReservation.clearErrors(domFormReservation);
             var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
 
             var status;
@@ -88,10 +90,10 @@ RoomViewController.prototype.onCreateView = function (view) {
                 status = 4;
             }
 
-            var roomId = localStorage.getItem("roomID");
+            var roomId = localStorage.getItem("roomId");
 
             var params = {
-                id: roomId,
+                roomId: roomId,
                 reservationStatus: status,
                 dateFrom: formReservation.dateFrom,
                 dateTo: formReservation.dateTo,
@@ -125,13 +127,10 @@ RoomViewController.prototype.onCreateView = function (view) {
         e.preventDefault();
     });
 
-    //formRoomInfo.loadFromForm(domFormRoomInfo);
-    //if (!formRoomInfo.validate()) {
-    //    formRoomInfo.applyErrorsToForm(domFormRoomInfo);
-    //} else {
-        var url = Application.getConfigValue("dataPath") + '/RoomEditServlet';
+    var url = Application.getConfigValue("dataPath") + '/RoomEditServlet';
 
         var roomId = localStorage.getItem("roomId");
+    console.log(roomId)
         var params = {
             id: roomId
         };
@@ -141,8 +140,13 @@ RoomViewController.prototype.onCreateView = function (view) {
             console.log(xhr.responseText);
 
             var response = JSON.parse(xhr.responseText);
+            console.log(response);
 
-            var status = response.statusRoom;
+            if(Ajax.mockData == false) {
+                response = response[0];
+            }
+
+            var status = response.intRoomStatus;
 
             if ( status == 1) {
                 view.querySelector('#statusRoom1').checked = true;
@@ -163,37 +167,72 @@ RoomViewController.prototype.onCreateView = function (view) {
             view.querySelector("#price").value = response.price;
             view.querySelector("#description").value = response.description;
 
-            if (response.wifi == 'true') {
+            //if (response.wifi == "true") {
+            //    view.querySelector("#wifi").checked = true;
+            //}
+            //if (response.tv == "true") {
+            //    view.querySelector("#tv").checked = true;
+            //}
+            //if (response.airConditioning == "true") {
+            //    view.querySelector("#airConditioning").checked = true;
+            //}
+            //if (response.refrigerator == "true") {
+            //    view.querySelector("#refrigerator").checked = true;
+            //}
+            //if (response.hairDryer == "true") {
+            //    view.querySelector("#hairDryer").checked = true;
+            //}
+            //if (response.bath == "true") {
+            //    view.querySelector("#bathroom").checked = true;
+            //}
+            //if (response.kitchen == "true") {
+            //    view.querySelector("#kitchen").checked = true;
+            //}
+            //if (response.livingRoom == "true") {
+            //    view.querySelector("#livingRoom").checked = true;
+            //}
+            //if (response.wc == "true") {
+            //    view.querySelector("#wc").checked = true;
+            //}
+            //if (response.sight == "true") {
+            //    view.querySelector("#sight").checked = true;
+            //}
+            //if (response.lux == "true") {
+            //    view.querySelector("#lux").checked = true;
+            //}
+
+
+            if (response.wifi == true) {
                 view.querySelector("#wifi").checked = true;
             }
-            if (response.tv == 'true') {
+            if (response.tv == true) {
                 view.querySelector("#tv").checked = true;
             }
-            if (response.airConditioning == 'true') {
+            if (response.airConditioning == true) {
                 view.querySelector("#airConditioning").checked = true;
             }
-            if (response.refrigerator == 'true') {
+            if (response.refrigerator == true) {
                 view.querySelector("#refrigerator").checked = true;
             }
-            if (response.hairDryer == 'true') {
+            if (response.hairDryer == true) {
                 view.querySelector("#hairDryer").checked = true;
             }
-            if (response.bath == 'true') {
+            if (response.bath == true) {
                 view.querySelector("#bathroom").checked = true;
             }
-            if (response.kitchen == 'true') {
+            if (response.kitchen == true) {
                 view.querySelector("#kitchen").checked = true;
             }
-            if (response.livingRoom == 'true') {
+            if (response.livingRoom == true) {
                 view.querySelector("#livingRoom").checked = true;
             }
-            if (response.wc == 'true') {
+            if (response.wc == true) {
                 view.querySelector("#wc").checked = true;
             }
-            if (response.sight == 'true') {
+            if (response.sight == true) {
                 view.querySelector("#sight").checked = true;
             }
-            if (response.lux == 'true') {
+            if (response.lux == true) {
                 view.querySelector("#lux").checked = true;
             }
 
@@ -214,14 +253,18 @@ RoomViewController.prototype.onCreateView = function (view) {
             view.querySelector("#saveRoomButton").style.display = "block";
 
         }, false);
-    //}
+
         view.querySelector("#saveRoomButton").addEventListener('click', function () {
             formRoomInfo.loadFromForm(view.querySelector("#createroom-form"));
             if (!formRoomInfo.validate()) {
                 formRoomInfo.applyErrorsToForm(domFormRoomInfo);
             } else {
-                var url = Application.getConfigValue("dataPath") + '/RoomGenerationServlet';
-
+                formRoomInfo.clearErrors(domFormRoomInfo);
+                if (Ajax.mockData == true) {
+                    var url = Application.getConfigValue("dataPath") + '/RoomGenerationServlet';
+                } else {
+                    var url = Application.getConfigValue("dataPath") + '/RoomEditServlet';
+                }
                 var wifi = view.querySelector('#wifi').checked;
                 var tv = view.querySelector('#tv').checked;
                 var airConditioning = view.querySelector('#airConditioning').checked;
@@ -252,7 +295,8 @@ RoomViewController.prototype.onCreateView = function (view) {
                     sight: sight,
                     wc: wc,
 
-                    intRoomStatus: 1
+                    intRoomStatus: 1,
+                    intRoomExtras: null
                 };
 
                 console.log(params);
@@ -272,11 +316,14 @@ RoomViewController.prototype.onCreateView = function (view) {
 
 
     view.querySelector("#viewAllReservations").addEventListener("click" , function() {
-
-        var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
+        if (Ajax.mockData == true) {
+            var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
+        }else {
+            var url = Application.getConfigValue("dataPath") + '/ViewGenerationServlet';
+        }
         var roomId = localStorage.getItem("roomId");
         var params = {
-            id: roomId
+            roomId: roomId
         };
         var promise = Ajax.getRequest(url, params, true);
         promise.setOnSuccess(function(xhr) {
@@ -291,7 +338,7 @@ RoomViewController.prototype.onCreateView = function (view) {
                 //accountView.style.display = "inline-block";
                 reservationView.style.width = "100%";
                 reservationView.style.paddingTop = "5px";
-                reservationView.style.borderBottom = "1px solid black"
+                reservationView.style.borderBottom = "1px solid black";
 
                 var reservationName = document.createElement("a");
                 reservationView.appendChild(reservationName);
@@ -315,4 +362,4 @@ RoomViewController.prototype.onCreateView = function (view) {
         }
         e.stopPropagation();
     }, false);
-};
+}

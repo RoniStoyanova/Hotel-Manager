@@ -42,5 +42,22 @@ var Validation = {
 
     validateSecondPassword : function(value1, value2) {
         return value1 == value2 ? true : false;
+    },
+
+    validateDateIn : function(value1,value2){
+        if ( value1 < value2) {
+            return false;
+        } else {
+            return true;
+        }
+    },
+
+    validateDateOut : function(value1,value2) {
+        if ( value1 > value2) {
+            return false;
+        } else {
+            return true;
+        }
     }
-}
+
+};

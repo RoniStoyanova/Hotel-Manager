@@ -9,21 +9,39 @@
     "userRole":"admin"
   },
   {
-    "userID":"1",
-    "firstName":"Veronika",
-    "lastName":"Stoyanova",
-    "userName":"Veronika",
+    "userID":"2",
+    "firstName":"Dimityr",
+    "lastName":"Dimitrov",
+    "userName":"Dimityr",
     "password":"123456",
-    "eMail":"roni@gmail.com",
-    "userRole":"admin"
+    "eMail":"dimityr@gmail.com",
+    "userRole":"user"
   },
   {
-    "userID":"1",
-    "firstName":"Veronika",
-    "lastName":"Stoyanova",
-    "userName":"Veronika",
+    "userID":"3",
+    "firstName":"Ani",
+    "lastName":"Ivaylova",
+    "userName":"Ani",
     "password":"123456",
-    "eMail":"roni@gmail.com",
-    "userRole":"admin"
+    "eMail":"ani@gmail.com",
+    "userRole":"user"
+  },
+  {
+    "userID":"4",
+    "firstName":"Radostina",
+    "lastName":"Vasileva",
+    "userName":"Radostina",
+    "password":"123456",
+    "eMail":"radostina@gmail.com",
+    "userRole":"user"
+  },
+  {
+    "userID":"5",
+    "firstName":"Hristian",
+    "lastName":"Avramov",
+    "userName":"Hristian",
+    "password":"123456",
+    "eMail":"hristian@gmail.com",
+    "userRole":"user"
   }
 ]

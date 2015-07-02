@@ -1,5 +1,4 @@
 function ReservationForm(){
-    this.roomNumber = '';
     this.dateFrom  = '';
     this.dateTo = '';
     this.reservationStatus = '';
@@ -14,13 +13,13 @@ function ReservationForm(){
     var _this = this;
     this.addValidator('firstName', function(fieldName, fieldValue) {
         if (!Validation.validateRequired(fieldName)) {
-            _this.addError(fieldName, 'Use only characters!')
+            _this.addError(fieldName, 'Field required!')
         }
     });
 
     this.addValidator('lastName', function(fieldName, fieldValue) {
         if (!Validation.validateRequired(fieldName)) {
-            _this.addError(fieldName, 'Use only characters!')
+            _this.addError(fieldName, 'Field required!')
         }
     });
 
@@ -38,7 +37,13 @@ function ReservationForm(){
 
     this.addValidator('passport', function(fieldName, fieldValue) {
         if (!Validation.validateRequired(fieldName)) {
-            _this.addError(fieldName, 'Error !')
+            _this.addError(fieldName, 'Field required')
+        }
+    });
+
+    this.addValidator('passport', function(fieldName, fieldValue) {
+        if (!Validation.validateLength(fieldName,9,9)) {
+            _this.addError(fieldName, '9 digits required!')
         }
     });
 
@@ -48,19 +53,14 @@ function ReservationForm(){
         }
     });
 
-    //this.addValidator('phone', function(fieldName, fieldValue) {
-    //    if (!Validation.validateNumber(fieldName)) {
-    //        _this.addError(fieldName, 'Use only numbers!')
-    //    }
-    //});
-
-    //this.addValidator('Check_in_Date', function(Check_in_Date){             // ???????????????
-    //    var firstDate = _this.Check_in_Date;
-    //    var secondDate = _this.Check_out_Date;
-    //    if (!Validation.validateTwoDates(firstDate, secondDate)) {
-    //        _this.addError(Check_in_Date, 'Invalid date!');
-    //    }
-    //});
+    var today = new Date();
+    this.addValidator('dateFrom', function(fieldName, fieldValue) {
+        var value = fieldValue;
+        var date = new Date(value);
+        if (!Validation.validateDateIn(date, today)) {
+            _this.addError(fieldName, 'You can\' make reservations for past days!');
+        }
+    });
 
 }
 

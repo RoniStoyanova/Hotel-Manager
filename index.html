@@ -35,13 +35,17 @@
 
     <script type="text/javascript">
 
-        (function() {
-            var config = { //"/localhost:63342"
-                templatePath:'http://localhost:63342/mvc/app/views',
-//                dataPath: 'http://151.237.128.65:8080/HotelManagerTom',
-//                dataPath: 'http://192.168.7.197:8080/HotelManager',
+//
 
-              dataPath: 'app/mockup',
+        (function() {
+            var config = {
+                templatePath:'http://localhost:63342/mvc/app/views',
+//              dataPath: 'http://151.237.128.65:8080/HotelManagerTom',
+//              dataPath: 'http://192.168.7.186:8080/HotelManager',
+
+              dataPath: 'http://localhost:8080/HotelManager',
+//                dataPath: 'app/mockup',
+
                 routes: {
                     '': {
                         controller: 'login',
@@ -114,7 +118,7 @@
             };
 
             window.onload = function() {
-                Ajax.mockData = true;
+                Ajax.mockData = false;
                 Application.createApp(config).start();
             }
 
@@ -126,8 +130,12 @@
     <header class='header'>
         <div class='logo'>
             <div class="information">
-                <a id='accountInfo' class="informationLine" href="#/accountInfo">Account info</a>
+                <a id='accountInfo' class="informationLine" href="#/accountInfo">Account info
+
+                </a>
+                <a href="#/accountInfo"><img class="user" src="app/assets/user.png" width="40" height="40"></a>
                 <a id='logOut' class="informationLine" href="">Log out</a>
+                <a href=""><img class="logout" src="app/assets/logout.png" width="35" height="35"></a>
             </div>
         </div>
     </header>
@@ -135,13 +143,14 @@
 <div class="line">
     <nav class="navigationBar">
         <div class="navigation">
-            <ul>
+            <button id="navDown" class="sandwich"> </button>
+            <ul id="ul">
                 <li>
                     <a href="#/home">HOME</a>
                 </li>
                 <li>
                     <a id="rooms" href="#/rooms">ROOMS</a>
-                        <ul>
+                        <ul class="sandwich1">
                             <li class="adminSetup1"><a href="#/createRoom">CREATE ROOM</a></li>
                         </ul>
                 </li> 
@@ -153,8 +162,8 @@
                 </li>
                 <li class="adminSetup2">
                     <a href="#/accounts">ACCOUNTS</a>
-                        <ul>
-                            <li ><a href="#/createAccount">CREATE ACCOUNT</a></li>
+                        <ul class="sandwich2">
+                            <li> <a href="#/createAccount" >CREATE ACCOUNT</a></li>
                         </ul>
                 </li>
             </ul>
@@ -176,4 +185,16 @@
     </section>
 
 </body>
+
+<script>
+//    window.onload = function() {
+//        document.getElementById("navDown").addEventListener('click', function () {
+//            if (document.getElementById("ul").style.display == 'none') {
+//                document.getElementById("ul").style.display = 'block';
+//            } else {
+//                document.getElementByID("ul").style.display = 'none';
+//            }
+//        }, false);
+//    }
+</script>
 </html>

@@ -7,8 +7,11 @@ RoomController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
-
-    var url = Application.getConfigValue("dataPath") + '/AllRoomsServlet';
+    if (Ajax.mockData == true) {
+        var url = Application.getConfigValue("dataPath") + '/AllRoomsServlet';
+    } else {
+        var url = Application.getConfigValue("dataPath") + '/RoomsGetter';
+    }
     var params = {
 
     };
@@ -16,7 +19,7 @@ RoomController.prototype.onCreateView = function (view) {
     promise.setOnSuccess(function(xhr) {
 
         var response = JSON.parse(xhr.responseText);
-
+        console.log(response);
         for (var i = 0; i < response.length; i++) {
 
             if (response[i].beds == 1) {
@@ -30,9 +33,9 @@ RoomController.prototype.onCreateView = function (view) {
 
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
-                roomNumber.innerHTML = "Room number: " + response[i].roomNumber;
+                roomNumber.innerHTML = "Room number: " + response[i].roomId;
                 roomNumber.style.display = "block";
-                roomNumber.id = response[i].id;
+                roomNumber.id = response[i].roomId;
                 roomNumber.className = "informationLine";
                 roomNumber.style.paddingBottom = "5px";
 
@@ -48,9 +51,9 @@ RoomController.prototype.onCreateView = function (view) {
 
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
-                roomNumber.innerHTML = "Room number: " + response[i].roomNumber;
+                roomNumber.innerHTML = "Room number: " + response[i].roomId;
                 roomNumber.style.display = "block";
-                roomNumber.id = response[i].id;
+                roomNumber.id = response[i].roomId;
                 roomNumber.className = "informationLine";
                 roomNumber.style.paddingBottom = "5px";
 
@@ -65,9 +68,9 @@ RoomController.prototype.onCreateView = function (view) {
 
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
-                roomNumber.innerHTML = "Room number :" + response[i].roomNumber;
+                roomNumber.innerHTML = "Room number :" + response[i].roomId;
                 roomNumber.style.display = "block";
-                roomNumber.id = response[i].id;
+                roomNumber.id = response[i].roomId;
                 roomNumber.className = "informationLine"
                 roomNumber.style.paddingBottom = "5px";
 
@@ -82,8 +85,8 @@ RoomController.prototype.onCreateView = function (view) {
 
                 var roomNumber = document.createElement("a");
                 roomView.appendChild(roomNumber);
-                roomNumber.innerHTML = "Room number :" + response[i].roomNumber;
-                roomNumber.id = response[i].id;
+                roomNumber.innerHTML = "Room number :" + response[i].roomId;
+                roomNumber.id = response[i].roomId;
                 roomNumber.className = "informationLine"
                 roomNumber.style.padding = "5px";
                 roomNumber.style.display = "block";

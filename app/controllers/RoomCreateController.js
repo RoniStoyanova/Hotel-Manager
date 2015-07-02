@@ -19,6 +19,7 @@ RoomCreateController.prototype.onCreateView = function (view) {
         if (!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
+            form.clearErrors(domForm);
             var url = Application.getConfigValue("dataPath") + '/RoomGenerationServlet';
 
             var wifi = view.querySelector('#wifi').checked;
@@ -51,13 +52,12 @@ RoomCreateController.prototype.onCreateView = function (view) {
                 sight : sight,
                 wc : wc,
 
-                intRoomStatus : 1
+                intRoomStatus : 1,
+                intRoomExtras: null
         };
-
-            console.log(params);
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
-                console.log(xhr.responseText);
+
                 window.location.hash = '#/rooms';
             });
             promise.setOnFail(function(xhr) {
@@ -65,4 +65,4 @@ RoomCreateController.prototype.onCreateView = function (view) {
             });
         }
     }, false);
-}
+};

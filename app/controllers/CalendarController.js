@@ -98,52 +98,52 @@ CalendarController.prototype.onCreateView = function (view) {
 
 
 
-    view.querySelector("#showAllReservations").addEventListener("click", function() {
-
-        var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
-
-        var params = {
-
-        };
-
-        var promise = Ajax.postRequest(url, params, true);
-        promise.setOnSuccess(function(xhr) {
-            console.log(xhr.responseText);
-
-            var response = JSON.parse(xhr.responseText);
-
-            var calendarMonth = form.chooseMonth.selectedIndex;
-            var calendarYear;
-            var yearIndex = form.chooseYear.selectedIndex;
-            if (yearIndex == 0) {
-                calendarYear = 2014;
-            } else if (yearIndex == 1) {
-                calendarYear = 2015;
-            } else {
-                calendarYear = 2016;
-            }
-            for (var i = 0; i < response.length; i++) {
-
-                var date = new Date(response[i].dateFrom);
-                var reservationDay = date.getDate();
-                var reservationMonth = date.getMonth();
-                var reservationYear = date.getFullYear();
-                for (var j=1; j <= 40; j++) {
-                    console.log(view.querySelector("th").innerHTML);
-                    if (view.querySelectorAll("td")[j].innerHTML == reservationDay &&
-                    reservationMonth == calendarMonth && reservationYear == calendarYear) {
-                        view.querySelector("#tableBody").childNodes[j].style.color = "red"
-                    }
-                }
-            }
-
-        });
-        promise.setOnFail(function(xhr) {
-            console.log(xhr.responseText);
-
-        });
-
-    },false);
+    //view.querySelector("#showAllReservations").addEventListener("click", function() {
+    //
+    //    var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
+    //
+    //    var params = {
+    //
+    //    };
+    //
+    //    var promise = Ajax.postRequest(url, params, true);
+    //    promise.setOnSuccess(function(xhr) {
+    //        console.log(xhr.responseText);
+    //
+    //        var response = JSON.parse(xhr.responseText);
+    //
+    //        var calendarMonth = form.chooseMonth.selectedIndex;
+    //        var calendarYear;
+    //        var yearIndex = form.chooseYear.selectedIndex;
+    //        if (yearIndex == 0) {
+    //            calendarYear = 2014;
+    //        } else if (yearIndex == 1) {
+    //            calendarYear = 2015;
+    //        } else {
+    //            calendarYear = 2016;
+    //        }
+    //        for (var i = 0; i < response.length; i++) {
+    //
+    //            var date = new Date(response[i].dateFrom);
+    //            var reservationDay = date.getDate();
+    //            var reservationMonth = date.getMonth();
+    //            var reservationYear = date.getFullYear();
+    //            for (var j=1; j <= 40; j++) {
+    //                console.log(view.querySelector("th").innerHTML);
+    //                if (view.querySelectorAll("td")[j].innerHTML == reservationDay &&
+    //                reservationMonth == calendarMonth && reservationYear == calendarYear) {
+    //                    view.querySelector("#tableBody").childNodes[j].style.color = "red"
+    //                }
+    //            }
+    //        }
+    //
+    //    });
+    //    promise.setOnFail(function(xhr) {
+    //        console.log(xhr.responseText);
+    //
+    //    });
+    //
+    //},false);
 
     view.querySelector("#showStatistic").addEventListener("click", function() {
 
@@ -197,7 +197,7 @@ CalendarController.prototype.onCreateView = function (view) {
 
             view.querySelector(".pieChart").appendChild(legend);
 
-            view.querySelector("#showYearStatistic").disabled = true;
+            view.querySelector("#showStatistic").disabled = true;
 
         });
         promise.setOnFail(function(xhr) {

@@ -19,6 +19,7 @@ LoginController.prototype.onCreateView = function (view) {
         if (!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
+            form.clearErrors(domForm);
             var url = Application.getConfigValue("dataPath") + '/LoginServlet';
             var params = {
                 user: form.username,
@@ -33,7 +34,7 @@ LoginController.prototype.onCreateView = function (view) {
                 localStorage.setItem('userRole',response.userRole);
                 var userId=localStorage.getItem('userId');
                 var userRole = localStorage.getItem('userRole');
-
+                document.querySelector("#accountInfo").innerHTML = response.firstName + " " + response.lastName;
                 window.location.hash = '#/home';
 
             });
@@ -43,6 +44,7 @@ LoginController.prototype.onCreateView = function (view) {
                 var response = JSON.parse(xhr.responseText);
                 form.addError("username",response.massage);
                 form.applyErrorsToForm(domForm);
+
             })
         }
 

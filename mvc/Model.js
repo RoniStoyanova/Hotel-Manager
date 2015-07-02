@@ -155,6 +155,7 @@ Model.prototype.applyErrorsToForm = function (form) {
             continue;
         }
         var fields = form.querySelectorAll('[name=' + field + ']');
+        console.log(fields);
         if (fields.length > 1) {
             var parent = fields[0].parentNode;
             var errorContainer = parent.nextSibling;
@@ -168,7 +169,7 @@ Model.prototype.applyErrorsToForm = function (form) {
             var error = this.errors[field].join('<br>');
             errorContainer.innerHTML = error;
         } else {
-            errorContainer.innerHTML = ''
+            errorContainer.innerHTML = '';
         }
     }
 };
@@ -187,6 +188,40 @@ Model.prototype.modelFactory = function (fields, klass) {
         // a method or a prototype property
         if (object.hasOwnProperty(field) && typeof object[field] !== 'function') {
             object[field] = fields[field];
+        }
+    }
+};
+
+Model.prototype.clearFields = function (model, form) {
+    for (var field in model) {
+        if (model.hasOwnProperty(field) && field !== 'errors' && field !== 'validators' && field !== 'listOfSubTasks') {
+            var fields = form.querySelector('[name=' + field + ']');
+            fields.value = '';
+            if (fields.type === 'checkbox') {
+                fields.checked = false;
+            }
+        }
+        if (field === 'listOfSubTasks') {
+            var parent = document.getElementById('subtasks-holder');
+            while (parent.hasChildNodes()) {
+                parent.removeChild(parent.childNodes[0]);
+            }
+        }
+    }
+};
+
+Model.prototype.clearErrors = function (form) {
+    if (!Array.isArray(form)) {
+        var errorFields = form.querySelectorAll('.error');
+        for (var i = 0; i < errorFields.length; i++) {
+            errorFields[i].innerHTML = '';
+        }
+    } else {
+        for (var i = 0; i < form.length; i++) {
+            var errorFields = form[i].querySelectorAll('.error');
+            for (var j = 0; j < errorFields.length; j++) {
+                errorFields[j].innerHTML = '';
+            }
         }
     }
 };

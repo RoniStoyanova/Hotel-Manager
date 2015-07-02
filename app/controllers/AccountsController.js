@@ -5,8 +5,12 @@ function AccountsController() {
 AccountsController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
+    if (Ajax.mockData == true ) {
+        var url = Application.getConfigValue("dataPath") + '/AccountServlet';
+    } else {
+        var url = Application.getConfigValue("dataPath") + '/LoginServlet';
+    }
 
-    var url = Application.getConfigValue("dataPath") + '/AccountServlet';
     var params = {
 
     };
@@ -14,8 +18,8 @@ AccountsController.prototype.onCreateView = function (view) {
     promise.setOnSuccess(function(xhr) {
 
         var response = JSON.parse(xhr.responseText);
-
-        for (var i = 0; i < response.length; i++) {
+        //console.log(xhr.responseText);
+        for (var i =0; i < response.length; i++) {
             
             //Create container for the account
             var accountView = document.createElement("div");
@@ -29,7 +33,7 @@ AccountsController.prototype.onCreateView = function (view) {
             accountView.appendChild(accountName);
             accountName.innerHTML = response[i].firstName + " " + response[i].lastName;
             accountName.style.display = "block";
-            accountName.id = response[i].id;
+            accountName.id = response[i].userId;
             accountName.className = "informationLine";
             accountName.style.padding = "5px";
         }
@@ -43,6 +47,7 @@ AccountsController.prototype.onCreateView = function (view) {
     accountParent.addEventListener("click",function showInfo(e) {
         if (e.target !== e.currentTarget) {
             localStorage.setItem('accountId', e.target.id);
+            console.log(localStorage.getItem('accountId'))
             window.location.hash = '#/accountView';
         }
         e.stopPropagation();

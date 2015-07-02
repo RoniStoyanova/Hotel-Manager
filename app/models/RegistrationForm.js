@@ -4,8 +4,8 @@ function RegistrationForm() {
     this.username = '';
     this.email = '';
     this.password = '';
-    this.secondpassword = '';
-    this.position = '';
+    this.secondPassword = '';
+    this.userRole = '';
 
 
     Model.call(this);
@@ -42,11 +42,14 @@ function RegistrationForm() {
         }
     });
 
-    //this.addValidator('secondpassword', function(fieldName, fieldValue) {
-    //    if (!Validation.validateSecondPassword(fieldValue, )) {
-    //        _this.addError(fieldName, 'User name must be at least 6 characters!')
-    //    }
-    //});
+    this.addValidator('secondPassword', function(fieldName, fieldValue) {
+        var firstPass = _this.password;
+        if (!Validation.validateSecondPassword(fieldValue, firstPass)) {
+            _this.addError(fieldName, 'Password doesn\'t match!')
+        }
+    });
+
+
 
 }
 

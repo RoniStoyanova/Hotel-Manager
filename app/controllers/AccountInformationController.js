@@ -34,11 +34,13 @@ AccountInformationController.prototype.onCreateView = function (view) {
     });
 
     form.loadFromForm(domForm);
-    var url = Application.getConfigValue("dataPath") + '/LoginServlet';
+
+
+    var url = Application.getConfigValue("dataPath") + '/CheckUserServlet';
 
     var userId = localStorage.getItem("userId");
     var params = {
-        id : userId
+        userId : userId
     };
     var promise = Ajax.getRequest(url, params, true);
     promise.setOnSuccess(function (xhr) {
@@ -49,8 +51,8 @@ AccountInformationController.prototype.onCreateView = function (view) {
         view.querySelector("#infoLastName").value = response.lastName;
         view.querySelector("#infoUserName").value = response.userName;
         view.querySelector("#infoEmail").value = response.eMail;
-        view.querySelector("#infoPassword").value = response.password;
-        view.querySelector("#infoConfirmPassword").value = response.password;
+        //view.querySelector("#infoPassword").value = response.password;
+        //view.querySelector("#infoConfirmPassword").value = response.password;
 
         if (response.userRole == 'admin') {
             view.querySelector("#infoRadio1").checked = true;
@@ -74,10 +76,13 @@ AccountInformationController.prototype.onCreateView = function (view) {
     }, false);
 
     view.querySelector("#saveChanges").addEventListener('click', function() {
-        form.loadFromForm(view.querySelector("#accountinfo-form"));
+
+        form.loadFromForm(domForm);
         if(!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
+            form.clearErrors(domForm);
+            document.querySelectorAll(".error").innerHTML = '';
             url = Application.getConfigValue("dataPath") + '/UserEditServlet';
             var position;
             if (view.querySelector("#infoRadio1").checked) {

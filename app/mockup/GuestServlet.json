@@ -1,12 +1,11 @@
 {
   "roomId" : 1,
   "reservationStatus" : 2,
-  "dateFrom" : "2015-03-24",
-  "dateTo" : "2015-04-01",
-  "firstName" : "Veronika",
-  "lastName" : "Stoyanova",
-  "passport" : "22222222",
+  "dateFrom" : "2015-07-24",
+  "dateTo" : "2015-07-27",
+  "firstName" : "Iavn",
+  "lastName" : "Ivanov",
+  "passport" : "1111111111",
   "egn" : "11111111",
-  "eMail" : "roni@gmail.com",
-  "phone" : "0043950349543"
+  "eMail" : "ivan@gmal.com"
 }

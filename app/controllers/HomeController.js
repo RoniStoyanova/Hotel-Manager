@@ -7,6 +7,21 @@ HomeController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
 
+    document.getElementById("navDown").addEventListener('click', function () {
+            document.getElementById("ul").style.display = 'block';
+    }, false);
+
+
+    document.getElementById("ul").addEventListener('mouseover', function () {
+        document.getElementById("ul").style.display = 'block';
+    }, false);
+
+    document.getElementById("ul").addEventListener('mouseout', function () {
+        document.getElementById("ul").style.display = 'none';
+    }, false);
+
+
+
     var form = new FilterForm();
     var domForm = view.querySelector("#filter-form");
     domForm.addEventListener("submit",function(e) {
@@ -19,6 +34,8 @@ HomeController.prototype.onCreateView = function (view) {
         if (!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
+            form.clearErrors(domForm);
+            view.querySelector(".error").innerHTML = '';
             var url = Application.getConfigValue("dataPath") + '/ViewGenerationServlet';
             var params = {
                 dateFrom : form.dateFrom,

@@ -29,17 +29,21 @@ AccountViewController.prototype.onCreateView = function (view) {
     }
 
     var form = new RegistrationForm();
-    var domForm =view.querySelector("#accountView-form");
+    var domForm = view.querySelector("#accountView-form");
     domForm.addEventListener("submit", function (e) {
         e.preventDefault();
     });
 
     form.loadFromForm(domForm);
-    var url = Application.getConfigValue("dataPath") + '/LoginServlet';
-
+    if (Ajax.mockData == true) {
+        var url = Application.getConfigValue("dataPath") + '/LoginServlet';
+    } else {
+        var url = Application.getConfigValue("dataPath") + '/CheckUserServlet';
+    }
     var accountId = localStorage.getItem("accountId");
+    console.log(accountId);
     var params = {
-        id: accountId
+        userId: accountId
     };
 
     var promise = Ajax.getRequest(url, params, true);
@@ -51,13 +55,13 @@ AccountViewController.prototype.onCreateView = function (view) {
         view.querySelector("#accountLastName").value = response.lastName;
         view.querySelector("#accountUserName").value = response.userName;
         view.querySelector("#accountEmail").value = response.eMail;
-        view.querySelector("#accountPassword").value = response.password;
-        view.querySelector("#accountConfirmPassword").value = response.password;
-
+        //view.querySelector("#accountPassword").value = response.password;
+        //view.querySelector("#accountConfirmPassword").value = response.password;
+        //console.log(response.userRole);
         if (response.userRole == 'admin') {
             view.querySelector("#accountRadio1").checked = true;
         } else {
-            view.querySelector("#accountRadio1").checked = false;
+            view.querySelector("#accountRadio2").checked = true;
         }
     });
     promise.setOnFail(function (xhr) {
@@ -80,7 +84,9 @@ AccountViewController.prototype.onCreateView = function (view) {
         if(!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
+            form.clearErrors(domForm);
             url = Application.getConfigValue("dataPath") + '/UserEditServlet';
+            //url = Application.getConfigValue("dataPath") + '/UserEditServlet';
             var position;
             if (view.querySelector("#accountRadio1").checked) {
                 position = "admin";

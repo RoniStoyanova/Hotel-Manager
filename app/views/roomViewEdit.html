@@ -28,6 +28,7 @@
             <div class='containerInfo'>
                 <p class="accountFieldInfo">Room description</p>
                 <textarea id="description" class="fieldInfo" placeholder="Room description" rows="5" cols="47" name='description' ></textarea>
+                <p class='error'></p>
             </div>
             <div class="extras">
                 <p>EXTRAS:</p>
@@ -36,66 +37,79 @@
                     <div class="containerInfo">
                         <input id="wifi" class="checkBox" type="checkbox" name="wifi">
                         <label>Wi-Fi</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="tv" class="checkBox" type="checkbox" name="tv">
                         <label>TV</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="airConditioning" class="checkBox" type="checkbox" name="airConditioning">
                         <label>Air conditioning</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="refrigerator" class="checkBox" type="checkbox" name="refrigerator">
                         <label>Refrigerator</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="hairDryer" class="checkBox" type="checkbox" name="hairDryer">
                         <label>Hair dryer</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="bathroom" class="checkBox" type="checkbox" name="bathroom">
                         <label>Bathroom</label>
+                        <p class='error'></p>
                     </div>
                 </div>
                 <div class="addExtras2" >
                     <div class="containerInfo">
                         <input id="kitchen" class="checkBox" type="checkbox" name="kitchen">
                         <label>Kitchen</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="livingRoom" class="checkBox" type="checkbox" name="livingRoom">
                         <label>Living room</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="wc" class="checkBox" type="checkbox" name="wc">
                         <label>WC</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="sight" class="checkBox" type="checkbox" name="sight">
                         <label>Sight</label>
+                        <p class='error'></p>
                     </div>
                     <div class="containerInfo">
                         <input id="lux" class="checkBox" type="checkbox" name="lux">
                         <label>Lux</label>
+                        <p class='error'></p>
                     </div>
+
                 </div>
             </div>
 
             <div class="radio containerInfo">
                 <label>
-                    <input id="statusRoom1" type="radio" value="" name="reservationStatus"> Free
+                    <input id="statusRoom1" type="radio" value="" name="roomStatus"> Free
                 </label>
                 <label>
-                    <input id="statusRoom2" type="radio" value="" name="reservationStatus"> Occupied
+                    <input id="statusRoom2" type="radio" value="" name="roomStatus"> Occupied
                 </label>
+                <p class='error'></p>
             </div>
             <div class="radio containerInfo">
                 <label>
-                    <input id="statusRoom3" type="radio" value="" name="reservationStatus"> Under construction
+                    <input id="statusRoom3" type="radio" value="" name="roomStatus"> Under construction
                 </label>
                 <label>
-                    <input id="statusRoom4" type="radio" value="" name="reservationStatus"> For cleaning
+                    <input id="statusRoom4" type="radio" value="" name="roomStatus"> For cleaning
                 </label>
                 <p class='error'></p>
             </div>
@@ -119,7 +133,7 @@
         <form id="reservation-form" action="">
             <!-- Date from -->
             <div class='containerInfo'>
-                <p class="accountFieldInfo"> Check-out Date </p>
+                <p class="accountFieldInfo"> Check-in Date </p>
                 <input class="fieldInfo" type="date" name="dateFrom">
                 <p class='error'></p>
             </div>
