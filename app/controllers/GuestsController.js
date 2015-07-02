@@ -5,6 +5,8 @@ function GuestsController() {
 GuestsController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
+    showNavigation();
+
     var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
     var params = {
 

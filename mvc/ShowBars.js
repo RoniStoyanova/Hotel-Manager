@@ -18,3 +18,16 @@ function adminSetup() {
         document.querySelector(".adminSetup2").style.display = "none";
     }
 }
+ function showNavigation() {
+     document.getElementById("navDown").addEventListener('click', function () {
+         document.getElementById("ul").style.display = 'block';
+     }, false);
+
+     document.getElementById("ul").addEventListener('mouseover', function () {
+         document.getElementById("ul").style.display = 'block';
+     }, false);
+
+     document.getElementById("navDown").addEventListener('mouseout', function () {
+         document.getElementById("ul").style.display = 'none';
+     }, false);
+ }

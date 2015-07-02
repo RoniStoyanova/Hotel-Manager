@@ -6,6 +6,7 @@ RoomCreateController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
+    showNavigation();
 
     var form = new RoomForm();
     var domForm = view.querySelector("#createroom-form");

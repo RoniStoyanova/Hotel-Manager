@@ -5,6 +5,7 @@ function GuestViewController() {
 GuestViewController.prototype.onCreateView = function(view) {
     ShowBars();
     adminSetup();
+    showNavigation();
 
     var userRole = localStorage.getItem("userRole");
 

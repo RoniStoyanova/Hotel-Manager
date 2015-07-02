@@ -6,6 +6,7 @@ AccountCreateController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
+    showNavigation();
 
 
     var form = new RegistrationForm();

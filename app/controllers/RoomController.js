@@ -7,6 +7,8 @@ RoomController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
+    showNavigation();
+
     if (Ajax.mockData == true) {
         var url = Application.getConfigValue("dataPath") + '/AllRoomsServlet';
     } else {
