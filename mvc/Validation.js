@@ -1,6 +1,4 @@
-/**
- * Created by vasil on 6/9/15.
- */
+
 var Validation = {
 
     validateRequired : function (value) {

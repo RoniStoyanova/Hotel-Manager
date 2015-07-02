@@ -44,6 +44,9 @@ AccountCreateController.prototype.onCreateView = function (view) {
             });
             promise.setOnFail(function (xhr) {
                 console.log(xhr.responseText);
+                form.addError("userName","User name exist");
+                form.applyErrorsToForm(domForm);
+                console.log(xhr.responseText);
             });
         }
     }, false);

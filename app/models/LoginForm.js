@@ -12,8 +12,8 @@ function LoginForm () {
     });
 
     this.addValidator('password', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldValue, 4)) {
-            _this.addError(fieldName, 'User name must be at least 4 characters!')
+        if (!Validation.validateLength(fieldValue, 5)) {
+            _this.addError(fieldName, 'User name must be at least 5 characters!')
         }
     });
 }

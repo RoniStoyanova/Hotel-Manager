@@ -12,43 +12,43 @@ function ReservationForm(){
 
     var _this = this;
     this.addValidator('firstName', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldName)) {
+        if (!Validation.validateRequired(fieldValue)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
 
     this.addValidator('lastName', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldName)) {
+        if (!Validation.validateRequired(fieldValue)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
 
     this.addValidator('egn', function(fieldName, fieldValue) {
-        if (!Validation.validateNumber(fieldName)) {
+        if (!Validation.validateNumber(fieldValue)) {
             _this.addError(fieldName, 'Use only numbers!')
         }
     });
 
     this.addValidator('egn', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,10,10)) {
+        if (!Validation.validateLength(fieldValue,10,10)) {
             _this.addError(fieldName, '10 digits required!')
         }
     });
 
     this.addValidator('passport', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldName)) {
+        if (!Validation.validateRequired(fieldValue)) {
             _this.addError(fieldName, 'Field required')
         }
     });
 
     this.addValidator('passport', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,9,9)) {
+        if (!Validation.validateLength(fieldValue,9,9)) {
             _this.addError(fieldName, '9 digits required!')
         }
     });
 
     this.addValidator('email', function(fieldName, fieldValue) {
-        if (!Validation.validateEmail(fieldName)) {
+        if (!Validation.validateEmail(fieldValue)) {
             _this.addError(fieldName, 'Invalid email !');
         }
     });

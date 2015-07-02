@@ -27,7 +27,7 @@ function FilterForm () {
     this.addValidator('dateTo', function(fieldName, fieldValue) {
         var dateFrom = new Date(_this.dateFrom);
         var dateTo = new Date(fieldValue);
-        if (!Validation.validateDateOut(dateTo, dateFrom)) {
+        if (!Validation.validateDateIn(dateTo, dateFrom)) {
             _this.addError(fieldName, 'You can\' make reservations for past days!');
         }
     });

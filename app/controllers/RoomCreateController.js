@@ -53,8 +53,7 @@ RoomCreateController.prototype.onCreateView = function (view) {
                 sight : sight,
                 wc : wc,
 
-                intRoomStatus : 1,
-                intRoomExtras: null
+                intRoomStatus : 1
         };
             var promise = Ajax.postRequest(url, params, true);
             promise.setOnSuccess(function(xhr) {
@@ -62,6 +61,9 @@ RoomCreateController.prototype.onCreateView = function (view) {
                 window.location.hash = '#/rooms';
             });
             promise.setOnFail(function(xhr) {
+
+                form.addError("roomNumber","Room exist");
+                form.applyErrorsToForm(domForm);
                 console.log(xhr.responseText);
             });
         }

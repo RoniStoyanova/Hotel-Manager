@@ -20,7 +20,7 @@ LoginController.prototype.onCreateView = function (view) {
         if (!form.validate()) {
             form.applyErrorsToForm(domForm);
         } else {
-            form.clearErrors(domForm);
+            //form.clearErrors(domForm);
             var url = Application.getConfigValue("dataPath") + '/LoginServlet';
             var params = {
                 user: form.username,
