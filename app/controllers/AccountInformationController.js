@@ -6,7 +6,7 @@ AccountInformationController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
 
     function makeFormDisable() {
         view.querySelector("#infoFirstName").disabled = true;

@@ -6,7 +6,7 @@ LoginController.prototype.onCreateView = function (view) {
 
     ShowBars();
     //adminSetup();
-    showNavigation();
+    //showNavigation();
 
     var form = new LoginForm();
     var domForm = view.querySelector("#login-form");

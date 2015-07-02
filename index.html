@@ -43,8 +43,8 @@
 //              dataPath: 'http://151.237.128.65:8080/HotelManagerTom',
 //              dataPath: 'http://192.168.7.186:8080/HotelManager',
 
-              dataPath: 'http://localhost:8080/HotelManager',
-//                dataPath: 'app/mockup',
+//              dataPath: 'http://localhost:8080/HotelManager',
+                dataPath: 'app/mockup',
 
                 routes: {
                     '': {
@@ -118,7 +118,7 @@
             };
 
             window.onload = function() {
-                Ajax.mockData = false;
+                Ajax.mockData = true;
                 Application.createApp(config).start();
             }
 

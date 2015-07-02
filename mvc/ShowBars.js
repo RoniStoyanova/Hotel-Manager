@@ -27,7 +27,7 @@ function adminSetup() {
          document.getElementById("ul").style.display = 'block';
      }, false);
 
-     document.getElementById("navDown").addEventListener('mouseout', function () {
+     document.getElementById("ul").addEventListener('mouseout', function () {
          document.getElementById("ul").style.display = 'none';
      }, false);
  }

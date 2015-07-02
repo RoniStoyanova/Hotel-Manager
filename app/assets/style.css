@@ -547,7 +547,7 @@ h3 {
     margin: 10px 10px;
     width: 63px;
     height: 63px;
-    background-color: #494949 !important;
+    background: rgb(155, 8, 8);
     box-shadow: inset 2px 2px 10px rgba(100,100,100,.75) !important;
     border-top: none !important;
     border-left: none !important;

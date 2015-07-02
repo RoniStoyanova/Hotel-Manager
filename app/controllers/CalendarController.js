@@ -5,7 +5,7 @@ function CalendarController() {
 CalendarController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
 
     var form = view.querySelector("#calendar-form");
 

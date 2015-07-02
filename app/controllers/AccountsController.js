@@ -5,7 +5,7 @@ function AccountsController() {
 AccountsController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
 
     if (Ajax.mockData == true ) {
         var url = Application.getConfigValue("dataPath") + '/AccountServlet';

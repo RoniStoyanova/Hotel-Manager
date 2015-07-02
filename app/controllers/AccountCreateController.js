@@ -6,7 +6,7 @@ AccountCreateController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
 
 
     var form = new RegistrationForm();
@@ -39,6 +39,7 @@ AccountCreateController.prototype.onCreateView = function (view) {
             var promise = Ajax.postRequest(url, params, true);
 
             promise.setOnSuccess(function (xhr) {
+                //form.clearFields(domForm);
                 window.location.hash = '#/accounts';
             });
             promise.setOnFail(function (xhr) {

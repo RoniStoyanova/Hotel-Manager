@@ -5,7 +5,7 @@ function RoomViewController() {
 RoomViewController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
 
     view.querySelector("#saveRoomButton").style.display = "none";
     var userRole = localStorage.getItem('userRole');

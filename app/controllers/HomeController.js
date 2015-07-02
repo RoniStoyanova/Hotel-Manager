@@ -6,7 +6,15 @@ HomeController.prototype.onCreateView = function (view) {
 
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
+
+    document.getElementById("navDown").addEventListener('click', function () {
+        document.getElementById("ul").style.display = 'block';
+    }, false);
+
+    document.getElementById("navDown").addEventListener("dblclick",function () {
+        document.getElementById("ul").style.display = 'none';
+    }, false);
 
 
 

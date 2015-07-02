@@ -5,7 +5,7 @@ function AccountViewController() {
 AccountViewController.prototype.onCreateView = function (view) {
     ShowBars();
     adminSetup();
-    showNavigation();
+    //showNavigation();
 
     view.querySelector("#saveAccountButton").style.display = "none";
 
