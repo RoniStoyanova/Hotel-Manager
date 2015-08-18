@@ -12,17 +12,15 @@ function ReservationForm(){
 
     var _this = this;
     this.addValidator('firstName', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldValue)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
-
     this.addValidator('lastName', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldValue)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
-
     this.addValidator('egn', function(fieldName, fieldValue) {
         if (!Validation.validateNumber(fieldValue)) {
             _this.addError(fieldName, 'Use only numbers!')
@@ -32,12 +30,6 @@ function ReservationForm(){
     this.addValidator('egn', function(fieldName, fieldValue) {
         if (!Validation.validateLength(fieldValue,10,10)) {
             _this.addError(fieldName, '10 digits required!')
-        }
-    });
-
-    this.addValidator('passport', function(fieldName, fieldValue) {
-        if (!Validation.validateRequired(fieldValue)) {
-            _this.addError(fieldName, 'Field required')
         }
     });
 

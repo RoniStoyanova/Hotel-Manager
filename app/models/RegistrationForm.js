@@ -27,11 +27,6 @@ function RegistrationForm() {
         }
     });
     this.addValidator('email', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldValue,1)) {
-            _this.addError(fieldName, 'Field required!')
-        }
-    });
-    this.addValidator('email', function(fieldName, fieldValue) {
         if (!Validation.validateEmail(fieldValue)) {
             _this.addError(fieldName, 'E-mail is not valid!')
         }

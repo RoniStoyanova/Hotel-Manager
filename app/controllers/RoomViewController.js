@@ -67,9 +67,9 @@ RoomViewController.prototype.onCreateView = function (view) {
 
         formReservation.loadFromForm(domFormReservation);
         console.log(formReservation);
-        //if (!formReservation.validate()) {
-        //    formReservation.applyErrorsToForm(domFormReservation);
-        //} else {
+        if (!formReservation.validate()) {
+            formReservation.applyErrorsToForm(domFormReservation);
+        } else {
             formReservation.clearErrors(domFormReservation);
             var url = Application.getConfigValue("dataPath") + '/ReservationServlet';
 
@@ -117,7 +117,7 @@ RoomViewController.prototype.onCreateView = function (view) {
             promise.setOnFail(function (xhr) {
                 console.log(xhr.responseText);
             });
-        //}
+        }
 
     }, false);
 
