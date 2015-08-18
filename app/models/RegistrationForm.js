@@ -12,12 +12,12 @@ function RegistrationForm() {
 
     var _this = this;
     this.addValidator('firstname', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,1)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
     this.addValidator('lastname', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,1)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
@@ -27,7 +27,7 @@ function RegistrationForm() {
         }
     });
     this.addValidator('email', function(fieldName, fieldValue) {
-        if (!Validation.validateLength(fieldName,1)) {
+        if (!Validation.validateLength(fieldValue,1)) {
             _this.addError(fieldName, 'Field required!')
         }
     });
